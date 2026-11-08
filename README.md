@@ -9,7 +9,7 @@ Everything runs in the browser from one file (`index.html`). Data is stored in t
 | File | What it is |
 |---|---|
 | `index.html` | The whole app |
-| `manifest.webmanifest`, `sw.js`, `icons/` | Install as an app + works offline |
+| `manifest.webmanifest`, `sw.js`, `icon-192.png`, `icon-512.png` | Install as an app + works offline (all must be uploaded) |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 | `apps-script/Code.gs` | Backend for Google Apps Script sync (paste into Apps Script — **not** used by GitHub Pages) |
 | `supabase/schema.sql` | Backend for Supabase sync (run in the Supabase SQL Editor — **not** used by GitHub Pages) |
@@ -17,12 +17,14 @@ Everything runs in the browser from one file (`index.html`). Data is stored in t
 ## Publish on GitHub Pages
 
 1. Create a new repository on GitHub (for example `recipe-calculator`). It can be **private** if your GitHub plan allows Pages on private repos; otherwise public is fine — **no data or passwords are stored in the repository**.
-2. Upload every file and folder from this package to the repository root (Add file → Upload files → drag the folder contents → Commit).
+2. Upload these files to the repository root (Add file → Upload files → Commit): `index.html`, `manifest.webmanifest`, `sw.js`, `icon-192.png`, `icon-512.png`, `.nojekyll`, `README.md`. The `apps-script` and `supabase` folders are optional (they are not used by the website).
 3. Repository → **Settings → Pages** → *Build and deployment* → Source: **Deploy from a branch** → Branch: **main**, folder **/ (root)** → Save.
 4. After a minute the site is live at `https://<your-username>.github.io/<repository>/`.
 5. Open it on the first computer → create the **Admin** account → save the recovery key.
 
-To update later, upload the new `index.html` (and bump `CACHE` in `sw.js`). Data in the browsers and in the cloud is not affected.
+To update later, upload the new `index.html` (and bump `CACHE` in `sw.js`).
+
+**Install as an app:** open the site in a normal (not Incognito) Chrome/Edge window → install icon in the address bar, or menu ⋮ → *Install app*. On Android: Chrome menu ⋮ → *Install app* / *Add to Home screen*. Data in the browsers and in the cloud is not affected.
 
 ## Users and roles
 
