@@ -43,6 +43,11 @@ To update later, upload the new `index.html` (and bump `CACHE` in `sw.js`).
 | Run cloud sync | ✓ | ✓ | ✓ | |
 | Cloud sync settings, force push / pull | ✓ | | | |
 | Activity log | ✓ | ✓ | | |
+| View costing | ✓ | ✓ | | |
+| Set material prices & re-cost | ✓ | ✓ | | |
+| View KPI Board | ✓ | ✓ | | |
+| Manage operators & KPI settings | ✓ | ✓ | | |
+| View reports | ✓ | ✓ | | |
 | Users & roles | ✓ | | | |
 | Company header, full backup / restore, danger zone | ✓ | | | |
 
@@ -96,6 +101,31 @@ Open the site → on the first screen choose **Restore from cloud** (or **Restor
 Opening v6 in the same browser moves the old v5 data automatically: the saved recipes, suggestion lists, last-backup date and the old login (it becomes the **Admin**). The old v5 data is left in place as a safety copy.
 
 ## Changelog
+
+**v6.4 — Report**
+* New **Report** page with six reports, each with charts and tables: **Production** (batches run per day / week / month / year, RFT vs not RFT, RFT % trend against the target), **Materials** (dyes, chemicals and tape type consumption incl. additions, with cost), **Shades** (most dyed, most RFT, most additions), **Machines** (RFT % ranking, batches, average load, best / needs-attention), **RFT & Quality** (by Batch No, operator, tape type, calculator) and **Customers**.
+* Filters: period (today … all time, custom), group by day / week / month / year, calculator, customer, machine, operator. Hover any chart for details.
+* **Excel**: one workbook with 10 sheets (Summary, Production, Dyes, Chemicals, Tape Types, Shades, Machines, Batch No, Operators, Customers). **Print**: the open report or the full report, in English with charts.
+* **Company logo** now on every printed report (Report, Costing, KPI Board).
+* New permission: *View reports* (Admin and Manager by default).
+
+**v6.3 — KPI Board**
+* New **KPI Board** page: operator performance by day / week / month / custom period.
+* **Operators & Machines**: each operator owns machines; the Calculator picks the operator from the machine automatically (can be changed per job) and the operator is frozen into the saved job. The Recipe Card prints the operator.
+* A batch is **RFT (Right First Time)** when no Addition was needed. Additions started from the Library are linked to their batch; typed "Addition N" jobs are linked by OA + shade + customer. Admin/Manager can set RFT manually per batch.
+* **KPI Index** = RFT % × RFT weight + Productivity × productivity weight (productivity by batches dyed or tape kg). Ratings: Excellent / Very Good / Good / Average / Needs Improvement — all limits editable in KPI Settings.
+* Leaderboard with rank, operator profile (daily RFT trend + batch list), Excel export and Print/PDF.
+* New permissions: *View KPI Board* and *Manage operators, machines, KPI settings & RFT overrides* (Admin and Manager by default).
+
+**v6.2 — Costing**
+* New **Costing** page (menu): raw material cost of each dyeing batch = Tape (kg) + Dyes (g) + Chemicals (g) + Water (L).
+* **Material Prices**: tape price per kg by Tape Type (plus a default), dye and chemical price per kg, water price per 1000 L, currency and recipe unit (g / kg). Synced to every device.
+* Saving a recipe freezes its cost (with that day's prices) into the Library record, shown in the **Costing Register** with OA No; **OA-wise Summary** totals all batches of an OA. Addition batches cost only the added dyes/chemicals.
+* Filters (search, date range, saved vs today's prices), Re-cost, batch detail, Print/PDF (English) and Excel export (OA Summary, Batch Costing, Material Lines).
+* New permissions: *View costing* and *Set material prices & re-cost* (Admin and Manager by default).
+
+**v6.1**
+* **Final Dye Qty Adjustment (± %)** in both Lab to Bulk and Machine-to-Machine: choose *Plus* or *Minus*, type a %, and every dye's final quantity is raised or lowered by that % (Final = Calculated × (1 ± X/100)). Chemicals are not changed. The table shows the calculated qty under each adjusted value; the Recipe Card notes the adjustment; it is saved with the job.
 
 **v6.0**
 * Company header is now **TEX ZIPPERS (BD) LIMITED** on every card, QR code and export (editable in Settings).

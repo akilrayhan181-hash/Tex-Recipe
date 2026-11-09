@@ -800,6 +800,133 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
 [data-theme="dark"] .dye-sw{border-color:#666;}
 [data-theme="dark"] .dye-sw.empty{background:repeating-linear-gradient(45deg,#1b1f25 0 4px,#2b3037 4px 8px);}
 
+/* ============ v6.4 — REPORT ============ */
+.viz-root{--viz-1:#2a78d6;--viz-2:#eb6834;--viz-grid:#e4e4e0;--viz-ink:#52514e;--viz-track:#f1f1ee;}
+[data-theme="dark"] .viz-root{--viz-1:#3987e5;--viz-2:#d95926;--viz-grid:#2b3037;--viz-ink:#c3c2b7;--viz-track:#1f242b;}
+.rpt-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px;border-bottom:2px solid #0a0a0a;}
+.rpt-tab{font:inherit;font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:9px 14px;border:0;border-radius:8px 8px 0 0;background:#efefec;color:#333;cursor:pointer;}
+.rpt-tab.on{background:#0a0a0a;color:#fff;}
+.rpt-kpis{grid-template-columns:repeat(5,minmax(0,1fr));}
+figure.viz{margin:0 0 16px;border:1px solid var(--line);border-radius:10px;padding:10px 12px 6px;background:#fff;}
+figure.viz figcaption{font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+figure.viz svg{width:100%;height:auto;display:block;}
+.vz-legend{font-weight:700;text-transform:none;letter-spacing:0;color:var(--viz-ink);font-size:.72rem;display:inline-flex;align-items:center;gap:4px;}
+.vz-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-left:8px;}
+.vz-grid{stroke:var(--viz-grid);stroke-width:1;} .vz-base{stroke:var(--viz-ink);stroke-width:1;} .vz-target{stroke:var(--viz-ink);stroke-width:1.2;stroke-dasharray:5 4;}
+.vz-ax{font-size:10px;fill:var(--viz-ink);} .vz-lbl{font-size:11px;font-weight:600;fill:var(--viz-ink);} .vz-val{font-size:11px;font-weight:700;fill:var(--viz-ink);}
+.vz-track{fill:var(--viz-track);} .vz-dot{stroke:#fff;stroke-width:2;}
+[data-tip]{cursor:crosshair;}
+.vz-tip{position:fixed;z-index:9999;pointer-events:none;background:#0a0a0a;color:#fff;font-size:.74rem;font-weight:600;padding:7px 10px;border-radius:8px;max-width:340px;box-shadow:0 6px 20px rgba(0,0,0,.25);}
+.viz-empty{padding:24px;text-align:center;color:#888;font-style:italic;border:1px dashed var(--line);border-radius:10px;margin-bottom:14px;}
+.rpt-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.rpt-tbl{margin-bottom:14px;}
+.rpt-bw{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.rpt-bw .bw{border-radius:10px;padding:12px 14px;border:1.5px solid;}
+.rpt-bw .bw span{display:block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;}
+.rpt-bw .bw b{display:block;font-size:1.1rem;margin:2px 0;} .rpt-bw .bw em{font-style:normal;font-size:.76rem;}
+.rpt-bw .good{border-color:#2a78d6;background:#eef5fd;} .rpt-bw .bad{border-color:#eb6834;background:#fdf1ec;}
+@media(max-width:1000px){.rpt-2col{grid-template-columns:1fr;}.rpt-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}}
+[data-theme="dark"] #appRoot figure.viz{background:#161a1f;border-color:#2b3037;}
+[data-theme="dark"] #appRoot .rpt-tab{background:#1f242b;color:#ddd;} [data-theme="dark"] #appRoot .rpt-tab.on{background:var(--red);}
+[data-theme="dark"] #appRoot .rpt-tabs{border-color:var(--red);}
+[data-theme="dark"] #appRoot .vz-dot{stroke:#161a1f;}
+[data-theme="dark"] #appRoot .rpt-bw .good{background:#14243a;} [data-theme="dark"] #appRoot .rpt-bw .bad{background:#2e1c12;}
+/* ============ v6.3 — KPI BOARD ============ */
+.cost-kpi.good{border-color:#1f8a46;background:#eaf6ee;} .cost-kpi.good b{color:#14652f;}
+.cost-kpi.bad{border-color:var(--red);background:#fdeaec;} .cost-kpi.bad b{color:var(--red-dark);}
+.ok-txt{color:#14652f;} .bad-txt{color:var(--red-dark);}
+.kpi-table td{vertical-align:middle;}
+.kpi-table th{white-space:nowrap;}
+.kpi-table .rate{font-size:.6rem;padding:3px 7px;}
+.kpi-mc{white-space:normal !important;max-width:150px;min-width:110px;font-size:.68rem;line-height:1.35;}
+.kpi-idx{min-width:120px;display:flex;align-items:center;gap:8px;}
+.kpi-bar{flex:1;height:8px;border-radius:99px;background:#e6e6e2;overflow:hidden;min-width:70px;}
+.kpi-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),#e0a020 55%,#1f8a46);border-radius:99px;}
+.kpi-none td{background:#fafaf7;font-style:italic;}
+.rate{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:3px 9px;border-radius:999px;white-space:nowrap;}
+.r-ex{background:#14652f;color:#fff;} .r-vg{background:#2fa65c;color:#fff;} .r-g{background:#e6f0ff;color:#1d4fa8;} .r-av{background:#fff4dc;color:#8a5200;} .r-ni{background:var(--red);color:#fff;} .r-ld{background:#eee;color:#666;}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px;margin-top:6px;}
+.mc-pick{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:.78rem;font-weight:700;text-transform:none;letter-spacing:0;margin:0;cursor:pointer;background:#fff;}
+.mc-pick small{font-weight:600;color:#a05a00;}
+.mc-pick.taken{background:#fffaf0;}
+.mc-pick input{width:auto;}
+.mc-chip{display:inline-block;font-size:.68rem;font-weight:700;background:#f0f0ee;border-radius:6px;padding:2px 6px;margin:1px;}
+.op-note{margin-top:4px;font-size:.7rem;}
+#lab_operator,#m2m_operator{width:100%;}
+.kpi-trend{display:flex;align-items:flex-end;gap:4px;height:120px;padding:8px 4px 0;border-bottom:1px solid var(--line);margin:6px 0 4px;}
+.kt-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:10px;}
+.kt-bar{width:100%;max-width:26px;background:var(--red);border-radius:4px 4px 0 0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+.kt-bar i{display:block;background:#1f8a46;}
+.kt-col span{font-size:.6rem;color:#888;margin-top:2px;}
+.kt-key{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:middle;} .kt-key.ok{background:#1f8a46;} .kt-key.bad{background:var(--red);}
+.op-link{font:inherit;font-weight:800;background:none;border:0;padding:0;color:inherit;cursor:pointer;text-align:left;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+.kpi-ov{width:auto;font-size:.74rem;padding:4px 6px;}
+[data-theme="dark"] #appRoot .kpi-bar{background:#2b3037;}
+[data-theme="dark"] #appRoot .kpi-none td{background:#14181d;}
+[data-theme="dark"] #appRoot .mc-pick{background:#161a1f;border-color:#2b3037;}
+[data-theme="dark"] #appRoot .mc-pick.taken{background:#241d10;}
+[data-theme="dark"] #appRoot .mc-chip{background:#262a31;}
+[data-theme="dark"] #appRoot .cost-kpi.good{background:#10241a;} [data-theme="dark"] #appRoot .cost-kpi.bad{background:#2a1418;}
+[data-theme="dark"] .cost-kpi.good{background:#10241a;} [data-theme="dark"] .cost-kpi.bad{background:#2a1418;}
+/* ============ v6.2 — COSTING ============ */
+.cost-kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:6px 0 14px;}
+.cost-kpi{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;}
+.cost-kpi span{display:block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#777;}
+.cost-kpi b{display:block;font-size:1.02rem;margin-top:3px;white-space:nowrap;}
+.cost-kpi.main{background:#0a0a0a;border-color:#0a0a0a;color:#fff;}
+.cost-kpi.main span{color:#ff8a92;}
+table .num,.cost-table .num{text-align:right;white-space:nowrap;}
+.cost-table tfoot td,.cost-reg tfoot td{font-weight:800;}
+.cost-miss td{background:#fff5f5 !important;}
+.miss-tag{display:inline-block;font-size:.68rem;font-weight:800;color:var(--red-dark);background:#fdeaec;border-radius:999px;padding:2px 8px;}
+.miss-dot{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--red);color:#fff;font-size:.64rem;font-weight:900;margin-left:4px;cursor:help;}
+.cost-warn{margin-top:10px;font-size:.78rem;font-weight:700;color:var(--red-dark);background:#fdeaec;border-radius:8px;padding:8px 12px;}
+.cost-reg th,.cost-reg td{padding:7px 8px !important;font-size:.76rem;}
+.cost-reg td{white-space:nowrap;}
+.cost-reg .lib-actions-cell{flex-wrap:nowrap;}
+.cost-reg .btn-sm{padding:5px 9px;font-size:.66rem;}
+.cost-filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px;}
+.cost-filters label{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:800;text-transform:uppercase;margin:0;}
+.cost-filters input[type=date],.cost-filters select{width:auto;}
+.cost-filters .lib-search{flex:1 1 240px;}
+.price-grid{display:grid;grid-template-columns:1fr 1.4fr 1.2fr;gap:14px;}
+.price-scroll{max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:8px;}
+.price-scroll table{margin:0;}
+.price-scroll thead th{position:sticky;top:0;z-index:1;}
+.pr-in{width:120px;text-align:right;font-weight:700;}
+.pr-in.bad{border-color:var(--red) !important;background:#fdeaec !important;}
+.cost-modal{max-width:900px !important;width:calc(100vw - 32px);}
+.cost-modal-body{padding:0 22px;max-height:70vh;overflow:auto;}
+.cost-detail-meta{font-size:.8rem;margin-bottom:10px;}
+@media(max-width:900px){.cost-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.price-grid{grid-template-columns:1fr;}}
+[data-theme="dark"] #appRoot .cost-kpi{background:#161a1f;border-color:#2b3037;}
+[data-theme="dark"] #appRoot .cost-kpi.main{background:#000;border-color:#3a3f47;}
+[data-theme="dark"] #appRoot .cost-miss td{background:#2a1418 !important;}
+[data-theme="dark"] #appRoot .miss-tag,[data-theme="dark"] #appRoot .cost-warn{background:#3a1a1f;color:#ff9aa2;}
+[data-theme="dark"] #appRoot .price-scroll{border-color:#2b3037;}
+[data-theme="dark"] .cost-kpi{background:#161a1f;border-color:#2b3037;}
+/* ============ v6.1 — FINAL DYE QTY ADJUSTMENT ============ */
+.qadj-box{margin-top:14px;border:1.5px dashed #c9c9c4;border-radius:10px;padding:12px 14px;background:#fafaf7;}
+.qadj-box.active{border-style:solid;border-color:#1f8a46;background:#f0faf3;}
+.qadj-box.active.minus{border-color:var(--red);background:#fff4f5;}
+.qadj-title{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.qadj-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.qadj-seg{display:inline-flex;border:1.5px solid #222;border-radius:8px;overflow:hidden;}
+.qadj-dir{font:inherit;font-size:.78rem;font-weight:800;padding:8px 14px;border:0;background:#fff;color:#222;cursor:pointer;}
+.qadj-dir + .qadj-dir{border-left:1.5px solid #222;}
+.qadj-dir.on[data-dir="plus"]{background:#1f8a46;color:#fff;}
+.qadj-dir.on[data-dir="minus"]{background:var(--red);color:#fff;}
+.qadj-pct{display:flex;align-items:center;gap:6px;}
+.qadj-pct input{width:110px;font-weight:800;}
+.qadj-pct span{font-weight:800;}
+.qadj-was{display:block;font-size:.66rem;font-weight:600;color:#888;white-space:nowrap;}
+.qadj-print{margin-top:4px;font-size:.72rem;font-style:italic;}
+[data-theme="dark"] #appRoot .qadj-box{background:#161a1f;border-color:#3a3f47;}
+[data-theme="dark"] #appRoot .qadj-box.active{background:#10241a;border-color:#2fa65c;}
+[data-theme="dark"] #appRoot .qadj-box.active.minus{background:#2a1418;border-color:var(--red);}
+[data-theme="dark"] #appRoot .qadj-dir{background:#1b1f25;color:#ddd;}
+[data-theme="dark"] #appRoot .qadj-seg,[data-theme="dark"] #appRoot .qadj-dir + .qadj-dir{border-color:#555;}
+.ro .qadj-dir,.ro .qadj-clear{pointer-events:none;opacity:.6;}
 /* ============ v6 — USERS, ROLES, CLOUD SYNC ============ */
 .perm-off{display:none !important;}
 .ro #calcInputs .toolbar,.ro #calcInputs .btn-row-del{display:none !important;}
@@ -1096,6 +1223,9 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
     <button type="button" class="sb-item sub nav-item" data-view="view-calculator" data-mode="recipe" data-tip="Recipe Card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span class="sb-text">Recipe Card</span></button>
     <button type="button" class="sb-item sub nav-item" data-view="view-calculator" data-mode="prescription" data-tip="Prescription Card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h4"/></svg><span class="sb-text">Prescription Card</span></button>
     <button type="button" class="sb-item nav-item" data-view="view-library" data-tip="Recipe Library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/></svg><span class="sb-text">Recipe Library</span><span class="sb-badge" id="sbLibCount">0</span></button>
+    <button type="button" class="sb-item nav-item" data-view="view-costing" data-tip="Costing" data-perm="cost.view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M8 6.5h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18.5h2M12 18.5h2M16 14.5v4"/></svg><span class="sb-text">Costing</span></button>
+    <button type="button" class="sb-item nav-item" data-view="view-kpi" data-tip="KPI Board" data-perm="kpi.view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><circle cx="19" cy="6" r="2.5"/></svg><span class="sb-text">KPI Board</span></button>
+    <button type="button" class="sb-item nav-item" data-view="view-report" data-tip="Report" data-perm="report.view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg><span class="sb-text">Report</span></button>
     <div class="sb-label"><span>Quick actions</span></div>
     <button type="button" class="sb-item " data-act="newjob" data-tip="New job" data-perm="recipe.edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="sb-text">New job</span></button>
     <button type="button" class="sb-item " data-act="save" data-tip="Save to Library" data-perm="recipe.save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h11l4 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M8 3v5h7V3M8 21v-7h8v7"/></svg><span class="sb-text">Save to Library</span></button>
@@ -1285,6 +1415,7 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
                 <tr><td>Tape / Fabric Qty (kg)</td><td><input id="lab_tapeQty" type="text" inputmode="decimal"></td></tr>
                 <tr><td>Liquor Ratio (Cap ÷ Tape)</td><td><span class="readout" id="lab_out_ratio">—</span></td></tr>
                 <tr><td>M/C Capacity (label, e.g. 28kg)</td><td><input id="lab_capLabel" placeholder="28kg"></td></tr>
+                <tr><td>Operator</td><td><select id="lab_operator"></select><div id="lab_opNote" class="op-note"></div></td></tr>
               </tbody>
             </table>
           </div>
@@ -1325,6 +1456,18 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
         </table>
         <div class="toolbar">
           <button class="btn" onclick="addLabDyeRow()">+ Add Dye Row</button>
+        </div>
+        <div class="qadj-box" id="lab_qadjBox">
+          <div class="qadj-title">Final Dye Qty Adjustment <span class="badge">&plusmn; %</span></div>
+          <div class="qadj-row">
+            <div class="qadj-seg" role="group" aria-label="Increase or decrease">
+              <button type="button" class="qadj-dir" data-p="lab" data-dir="plus">+ Plus (barano)</button>
+              <button type="button" class="qadj-dir" data-p="lab" data-dir="minus">&minus; Minus (komano)</button>
+            </div>
+            <div class="qadj-pct"><input id="lab_qadjPct" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span>%</span></div>
+            <button type="button" class="btn secondary btn-sm qadj-clear" data-p="lab">Clear</button>
+          </div>
+          <p class="adj-note" id="lab_qadjOut">Shob dye er final qty te ekshathe % barano ba komano jabe. Chemical e kono change hobe na.</p>
         </div>
       </div>
     </div>
@@ -1377,6 +1520,7 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
                 <tr><td>Tape / Fabric Qty (kg)</td><td><input id="m1Tape" type="text" inputmode="decimal"></td><td><input id="m2Tape" type="text" inputmode="decimal"></td></tr>
                 <tr><td>Liquor Ratio (Cap ÷ Tape)</td><td><span class="readout" id="out_m1Ratio">—</span></td><td><span class="readout" id="out_m2Ratio">—</span></td></tr>
                 <tr><td>M/C Capacity (label, e.g. 28kg)</td><td></td><td><input id="m2CapLabel" placeholder="28kg"></td></tr>
+                <tr><td>Operator (bulk machine)</td><td></td><td><select id="m2m_operator"></select><div id="m2m_opNote" class="op-note"></div></td></tr>
               </tbody>
             </table>
           </div>
@@ -1410,6 +1554,18 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
         </table>
         <div class="toolbar">
           <button class="btn" onclick="addDyeRow()">+ Add Dye Row</button>
+        </div>
+        <div class="qadj-box" id="m2m_qadjBox">
+          <div class="qadj-title">Final Dye Qty Adjustment <span class="badge">&plusmn; %</span></div>
+          <div class="qadj-row">
+            <div class="qadj-seg" role="group" aria-label="Increase or decrease">
+              <button type="button" class="qadj-dir" data-p="m2m" data-dir="plus">+ Plus (barano)</button>
+              <button type="button" class="qadj-dir" data-p="m2m" data-dir="minus">&minus; Minus (komano)</button>
+            </div>
+            <div class="qadj-pct"><input id="m2m_qadjPct" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span>%</span></div>
+            <button type="button" class="btn secondary btn-sm qadj-clear" data-p="m2m">Clear</button>
+          </div>
+          <p class="adj-note" id="m2m_qadjOut">Shob dye er final qty te ekshathe % barano ba komano jabe. Chemical e kono change hobe na.</p>
         </div>
       </div>
     </div>
@@ -1736,6 +1892,175 @@ textarea.list-ed{width:100%;padding:8px 9px;border:1.5px solid var(--input-borde
           <li>Press <b>Test connection</b>, then <b>Save sync settings</b>. On every other device: open the app &rarr; <b>Restore from cloud</b> on the first screen, or sign in and enter the same details here.</li>
         </ol>
       </details>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================== -->
+<!-- ========================== COSTING ========================= -->
+<!-- =========================================================== -->
+<div class="view" id="view-costing" data-perm="cost.view">
+
+  <div class="section">
+    <div class="section-head">Current Job &mdash; Raw Material Cost <span><button type="button" class="btn btn-sm secondary" id="costToPrices">&#9998; Set prices</button> <button type="button" class="btn btn-sm secondary" id="costPrintCur">&#128424; Print</button> <button type="button" class="btn btn-sm" id="costSaveJob" data-perm="recipe.save">&#128190; Save job</button></span></div>
+    <div class="section-body">
+      <p class="hint">Calculator e je recipe ta khola ache, tar Tape, Dye, Chemical ar Water er qty theke live costing. <b>Save job</b> korle (ba Calculator e Save korle) costing ta ei diner price e OA No shoho Costing Register e save hoye jay.</p>
+      <p class="hint" id="costCurMeta"></p>
+      <div id="costCurrent"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">Costing Register &mdash; Saved Batches</div>
+    <div class="section-body">
+      <div class="cost-filters">
+        <input type="text" id="costSearch" class="lib-search" placeholder="Search OA No, customer, shade, batch…">
+        <label>From <input type="date" id="costFrom"></label>
+        <label>To <input type="date" id="costTo"></label>
+        <label>Price <select id="costBasis"><option value="saved">As saved (frozen)</option><option value="current">Today's prices</option></select></label>
+      </div>
+      <p class="hint" id="costSummary"></p>
+      <div class="toolbar" style="margin-top:0">
+        <button type="button" class="btn secondary btn-sm" id="costExcel" data-perm="library.export">&#128202; Export to Excel</button>
+        <button type="button" class="btn secondary btn-sm" id="costPrint">&#128424; Print / PDF</button>
+        <button type="button" class="btn secondary btn-sm" id="costRecostAll" data-perm="cost.prices" title="Freeze today's prices into the batches shown">&#8635; Re-cost shown with today's prices</button>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="cost-reg">
+          <thead><tr><th>Date</th><th>OA No</th><th>Customer</th><th>Shade</th><th>Batch</th><th>Machine</th><th class="num">Tape kg</th><th class="num">Tape</th><th class="num">Dyes</th><th class="num">Chemicals</th><th class="num">Water</th><th class="num">Total (<span id="costCur1">Tk</span>)</th><th class="num">Cost/kg</th><th>Price</th><th style="width:1%"></th></tr></thead>
+          <tbody id="costBody"></tbody>
+        </table>
+      </div>
+      <div class="card-table-title" style="margin-top:18px">OA-wise Summary</div>
+      <div style="overflow-x:auto">
+        <table class="cost-reg">
+          <thead><tr><th>OA No</th><th>Customer</th><th>Shades</th><th class="num">Batches</th><th class="num">Tape kg</th><th class="num">Tape</th><th class="num">Dyes</th><th class="num">Chemicals</th><th class="num">Water</th><th class="num">Total (<span id="costCur2">Tk</span>)</th><th class="num">Cost/kg</th></tr></thead>
+          <tbody id="costOaBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="costPrices">
+    <div class="section-head">Material Prices <span class="small-note" style="color:#fff;opacity:.8">synced to all devices</span></div>
+    <div class="section-body">
+      <p class="hint">Real kena dam din. Dye ar chemical er dam <b>per kg</b> (liquid chemical hole per litre). Recipe te dye/chemical er qty <b>gram</b> e thake, tai app nije /1000 kore hishab kore. Faka rakhle oi item er cost 0 dhora hoy ar <span class="miss-tag">no price</span> dekhay.</p>
+      <div class="grid grid-3" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div><label>Currency</label><input type="text" id="prCurrency" maxlength="8" placeholder="Tk"></div>
+        <div><label>Recipe dye/chemical qty unit</label><select id="prUnit"><option value="g">gram (g) — default</option><option value="kg">kg</option></select></div>
+        <div><label>Water price per 1000 L</label><input type="text" id="prWater" inputmode="decimal" placeholder="0.00"></div>
+        <div><label>Default tape price per kg</label><input type="text" id="prTapeDef" inputmode="decimal" placeholder="0.00"></div>
+      </div>
+      <div class="cost-filters" style="margin-top:14px">
+        <input type="text" id="prSearch" class="lib-search" placeholder="Search item…">
+        <span class="miss-tag" id="prMissing"></span>
+      </div>
+      <div class="price-grid">
+        <div><div class="card-table-title">Tape price / kg (by Tape Type)</div><div class="price-scroll"><table><thead><tr><th>Tape Type</th><th class="num">Price / kg</th></tr></thead><tbody id="prTapeBody"></tbody></table></div></div>
+        <div><div class="card-table-title">Dye price / kg</div><div class="price-scroll"><table><thead><tr><th>Dyeing Agent</th><th class="num">Price / kg</th></tr></thead><tbody id="prDyeBody"></tbody></table></div></div>
+        <div><div class="card-table-title">Chemical price / kg (or litre)</div><div class="price-scroll"><table><thead><tr><th>Chemical</th><th class="num">Price / kg</th></tr></thead><tbody id="prChemBody"></tbody></table></div></div>
+      </div>
+      <div class="toolbar"><button type="button" class="btn" id="prSave" data-perm="cost.prices">Save prices</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================== -->
+<!-- ========================= KPI BOARD ======================== -->
+<!-- =========================================================== -->
+<div class="view" id="view-kpi" data-perm="kpi.view">
+  <div class="section">
+    <div class="section-head">KPI Board &mdash; Operator Performance</div>
+    <div class="section-body">
+      <p class="hint">Operator er name e click korle tar profile (din-wise RFT, batch list) khulbe. Proti operator er machine theke batch gulo nije nije tar profile e jay. Kono batch e <b>Addition</b> na lagle seta <b>RFT (Right First Time)</b>. <b>KPI Index</b> = RFT % ar productivity (koto batch dyed) er weighted score &mdash; KPI Settings e bodlano jay.</p>
+      <div class="cost-filters">
+        <label>Period <select id="kpiPeriod">
+          <option value="today">Today</option><option value="yesterday">Yesterday</option><option value="week">This week</option><option value="lastweek">Last week</option>
+          <option value="month" selected>This month</option><option value="lastmonth">Last month</option><option value="year">This year</option><option value="all">All time</option><option value="custom">Custom…</option></select></label>
+        <span id="kpiCustom" hidden><label>From <input type="date" id="kpiFrom"></label> <label>To <input type="date" id="kpiTo"></label></span>
+        <label>Operator <select id="kpiOp"></select></label>
+        <span class="small-note" id="kpiRangeLbl"></span>
+      </div>
+      <div class="cost-kpis" id="kpiCards"></div>
+      <div class="toolbar" style="margin-top:0">
+        <button type="button" class="btn secondary btn-sm" id="kpiExcel" data-perm="library.export">&#128202; Export to Excel</button>
+        <button type="button" class="btn secondary btn-sm" id="kpiPrint">&#128424; Print / PDF</button>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="cost-reg kpi-table">
+          <thead><tr><th class="num">Rank</th><th>Operator</th><th>Machines</th><th class="num">Batches</th><th class="num">RFT</th><th class="num">Not RFT</th><th class="num">RFT %</th><th class="num">Additions</th><th class="num" id="kpiAddCostTh" title="Raw material cost of the additions">Add. cost</th><th class="num">Tape kg</th><th>KPI Index</th><th>Rating</th></tr></thead>
+          <tbody id="kpiBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">Operators &amp; Machines <button type="button" class="btn btn-sm" id="opAdd" data-perm="kpi.manage">+ Add operator</button></div>
+    <div class="section-body">
+      <p class="hint">Proti operator ke tar machine gulo tick kore din. Ek machine ek shomoy ek jon operator er. Calculator e machine select korlei operator nije nije boshe jay (dorkar hole Calculator e bodlano jay).</p>
+      <p class="hint" id="opUnassigned"></p>
+      <div class="uform" id="opForm" hidden>
+        <div class="uform-title" id="opFormTitle">Add operator</div>
+        <div class="grid grid-2">
+          <div><label>Operator name</label><input type="text" id="opName" maxlength="60" autocomplete="off"></div>
+          <div><label>Code / ID (optional)</label><input type="text" id="opCode" maxlength="20" autocomplete="off"></div>
+        </div>
+        <label style="margin-top:12px">Machines this operator runs</label>
+        <div class="mc-grid" id="opMachines"></div>
+        <p class="settings-msg" id="opMsg" role="status" style="color:var(--red-dark)"></p>
+        <div class="toolbar" style="margin-top:0"><button type="button" class="btn" id="opSave">Save operator</button><button type="button" class="btn secondary" id="opCancel">Cancel</button></div>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="cost-reg"><thead><tr><th>Operator</th><th>Code</th><th>Machines</th><th>Status</th><th style="width:1%"></th></tr></thead><tbody id="opBody"></tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="kpiSettings">
+    <div class="section-head">KPI Settings</div>
+    <div class="section-body">
+      <div class="grid grid-3" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div><label>RFT weight %</label><input type="text" id="kpiWRft" inputmode="decimal"></div>
+        <div><label>Productivity weight %</label><input type="text" id="kpiWProd" inputmode="decimal"></div>
+        <div><label>RFT target %</label><input type="text" id="kpiTarget" inputmode="decimal"></div>
+        <div><label>Productivity measured by</label><select id="kpiBasis"><option value="batches">Batches dyed (fair for small &amp; big machines)</option><option value="kg">Tape kg dyed</option></select></div>
+        <div><label>Min. batches to rank</label><input type="text" id="kpiMin" inputmode="numeric"></div>
+        <div><label>Week starts on</label><select id="kpiWeek"><option value="6">Saturday</option><option value="0">Sunday</option><option value="1">Monday</option></select></div>
+        <div><label>Excellent from</label><input type="text" id="kpiBEx" inputmode="decimal"></div>
+        <div><label>Very Good from</label><input type="text" id="kpiBVg" inputmode="decimal"></div>
+        <div><label>Good from</label><input type="text" id="kpiBG" inputmode="decimal"></div>
+        <div><label>Average from</label><input type="text" id="kpiBAv" inputmode="decimal"></div>
+        <div style="display:flex;align-items:flex-end"><span class="small-note">Below Average = Needs Improvement. KPI Index = RFT % &times; RFT weight + Productivity &times; productivity weight (Productivity = operator &divide; best operator &times; 100).</span></div>
+      </div>
+      <p class="settings-msg" id="kpiCfgMsg" role="status"></p>
+      <div class="toolbar" style="margin-top:0"><button type="button" class="btn" id="kpiCfgSave">Save settings</button><button type="button" class="btn secondary" id="kpiCfgReset">Reset defaults</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================== -->
+<!-- ========================== REPORT ========================== -->
+<!-- =========================================================== -->
+<div class="view" id="view-report" data-perm="report.view">
+  <div class="section">
+    <div class="section-head">Report <span><button type="button" class="btn btn-sm secondary" id="rptPrint">&#128424; Print this report</button> <button type="button" class="btn btn-sm secondary" id="rptPrintAll">&#128424; Print full report</button> <button type="button" class="btn btn-sm" id="rptExcel" data-perm="library.export">&#128202; Excel (all reports)</button></span></div>
+    <div class="section-body">
+      <p class="hint">Library te save kora shob batch theke report. Period, customer, machine, operator diye filter korun. Chart er upor mouse rakhle detail dekhabe. Excel e shob report alada sheet e ashe; Print e company logo shoho English report.</p>
+      <div class="cost-filters">
+        <label>Period <select id="rptPeriod">
+          <option value="today">Today</option><option value="yesterday">Yesterday</option><option value="week">This week</option><option value="lastweek">Last week</option>
+          <option value="month" selected>This month</option><option value="lastmonth">Last month</option><option value="year">This year</option><option value="all">All time</option><option value="custom">Custom…</option></select></label>
+        <span id="rptCustom" hidden><label>From <input type="date" id="rptFrom"></label> <label>To <input type="date" id="rptTo"></label></span>
+        <label>Show by <select id="rptGroup"><option value="auto">Auto</option><option value="day">Day</option><option value="week">Week</option><option value="month">Month</option><option value="year">Year</option></select></label>
+        <label>Calculator <select id="rptSrc"><option value="">Both</option><option value="lab">Lab to Bulk</option><option value="m2m">Machine-to-Machine</option></select></label>
+        <label>Customer <select id="rptCust"></select></label>
+        <label>Machine <select id="rptMc"></select></label>
+        <label>Operator <select id="rptOp"></select></label>
+      </div>
+      <p class="small-note" id="rptInfo"></p>
+      <div class="rpt-tabs" id="rptTabs" role="tablist"></div>
+      <div id="rptBody" class="viz-root"></div>
     </div>
   </div>
 </div>
@@ -4069,6 +4394,8 @@ const state = {
     order: freshOrder(),
     machineName:"28Kg-1", liquorCap:220, tapeQty:"", capLabel:"28kg",
     extraAdj:"",
+    operatorId:"",
+    qtyAdj:{dir:"plus", pct:""},
     dyes:[
       {name:"Yellow Brown", labPct:"", labTapeQty:10},
       {name:"Navy", labPct:"", labTapeQty:10},
@@ -4085,6 +4412,8 @@ const state = {
     order: freshOrder(),
     m1Name:"15Kg-1", m1Cap:172, m1Tape:"",
     m2Name:"28Kg-1", m2Cap:220, m2Tape:"", m2CapLabel:"28kg",
+    operatorId:"",
+    qtyAdj:{dir:"plus", pct:""},
     dyes:[
       {name:"Yellow Brown", qty:""},
       {name:"Navy", qty:""},
@@ -4152,6 +4481,26 @@ function modelDyes(c){
   });
   return out;
 }
+/* ============================================================
+   FINAL DYE QTY ADJUSTMENT (+ / - %) — both calculators
+   After the normal formula, every dye's final qty is raised or
+   lowered by the same %:  Final = Calculated x (1 +/- X/100)
+   Chemicals are not touched.
+   ============================================================ */
+function qtyAdjOf(S){
+  if(!S.qtyAdj || typeof S.qtyAdj !== "object") S.qtyAdj = {dir:"plus", pct:""};
+  if(S.qtyAdj.dir !== "minus") S.qtyAdj.dir = "plus";
+  if(S.qtyAdj.pct === undefined || S.qtyAdj.pct === null) S.qtyAdj.pct = "";
+  return S.qtyAdj;
+}
+function qtyAdjCalc(S){
+  const a = qtyAdjOf(S);
+  const raw = String(a.pct).trim();
+  const pct = raw === "" ? 0 : Math.abs(num(raw));
+  const signed = a.dir === "minus" ? -pct : pct;
+  return {dir:a.dir, pct, signed, on: pct > 0, factor: Math.max(0, 1 + signed/100)};
+}
+function qtyAdjText(q){ return (q.signed > 0 ? "+" : "\u2212") + fmt(q.pct) + " %"; }
 function modelAdd(c){ return {on:c.add.on, no:c.add.no, dir:c.add.dir, pct:c.add.pct}; }
 function addResultText(a){
   return (a.dir === "darker" ? "Darker" : "Lighter") + (isNaN(a.pct) ? "" : " by " + fmt(a.pct) + " %");
@@ -4231,6 +4580,9 @@ function showView(id){
   if(id === "view-users") renderUsers();
   if(id === "view-audit") renderAudit();
   if(id === "view-sync"){ fillSyncForm(); renderSyncView(); }
+  if(id === "view-costing"){ currentViewId = id; renderCosting(); }
+  if(id === "view-kpi"){ currentViewId = id; renderKpi(); }
+  if(id === "view-report"){ currentViewId = id; renderReport(); }
   if(id === "view-settings"){ populateAccount(); populateListEditor(); }
   if(typeof closeMenu === "function") closeMenu();
   window.scrollTo(0,0);
@@ -4323,6 +4675,7 @@ function validateModel(model){
   const anyDye = rawDyes.some(d=>d.name && d.name.trim());
   const anyChem = rawChems.some(c=>c.name && c.name.trim());
   if(!anyDye && !anyChem) warnings.push("No dyes or chemicals have been entered");
+  if(model.qtyAdj && model.qtyAdj.signed <= -100) warnings.push("Final qty adjustment is -" + fmt(model.qtyAdj.pct) + " % — every dye quantity becomes 0");
 
   return {errors, warnings};
 }
@@ -4478,6 +4831,11 @@ function buildLabDyeRows(){
   buildAddRows("lab");
 }
 
+function finalCellHtml(r, q, f){
+  if(r.final === "" || r.final === undefined || isNaN(r.final)) return "\u2014";
+  if(!q.on || isNaN(r.calcFinal)) return f(r.final);
+  return f(r.final) + '<small class="qadj-was">' + f(r.calcFinal) + " " + qtyAdjText(q) + "</small>";
+}
 function updateLabDyeOutputs(computed){
   const rows = document.querySelectorAll("#lab_dyeBody tr");
   computed.dyeRows.forEach((r,i)=>{
@@ -4485,9 +4843,9 @@ function updateLabDyeOutputs(computed){
     if(!row) return;
     row.querySelector('[data-out="requiredPerKg"]').textContent = r.requiredPerKg===""? "—" : fmt(r.requiredPerKg);
     row.querySelector('[data-out="adj"]').textContent = (r.requiredPerKg==="" || isNaN(r.requiredPerKg) || isNaN(computed.finalAdj)) ? "—" : fmt(r.requiredPerKg*computed.finalAdj/100);
-    row.querySelector('[data-out="final"]').textContent = r.final===""? "—" : fmt(r.final);
+    row.querySelector('[data-out="final"]').innerHTML = finalCellHtml(r, computed.qadj, fmt);
   });
-  document.getElementById("lab_out_dyeTotalFinal").textContent = fmt2(computed.dyeTotalFinal);
+  document.getElementById("lab_out_dyeTotalFinal").innerHTML = finalCellHtml({final:computed.dyeTotalFinal, calcFinal:computed.dyeTotalCalc}, computed.qadj, fmt2);
 }
 
 function buildLabChemRows(){
@@ -4549,6 +4907,7 @@ function computeLab(){
   const baseAdj = !isNaN(ratio) ? ratio*1.5 : NaN;
   const extraAdj = num(L.extraAdj);
   const finalAdj = !isNaN(baseAdj) ? baseAdj+extraAdj : NaN;
+  const qadj = qtyAdjCalc(L);
 
   const dyeRows = L.dyes.map(d=>{
     if(!hasVal(d.labPct) || d.labPct===""){
@@ -4557,9 +4916,11 @@ function computeLab(){
     const labPct = num(d.labPct);
     const labTape = hasVal(d.labTapeQty) && d.labTapeQty!=="" ? num(d.labTapeQty) : 10;
     const requiredPerKg = tape > 0 ? labPct*labTape*tape : NaN;
-    const final = (!isNaN(requiredPerKg) && !isNaN(finalAdj)) ? requiredPerKg*(1+finalAdj/100) : NaN;
-    return {...d, requiredPerKg, final};
+    const calcFinal = (!isNaN(requiredPerKg) && !isNaN(finalAdj)) ? requiredPerKg*(1+finalAdj/100) : NaN;
+    const final = !isNaN(calcFinal) ? calcFinal*qadj.factor : NaN;
+    return {...d, requiredPerKg, calcFinal, final};
   });
+  const dyeTotalCalc = dyeRows.reduce((s,d)=> s + (d.calcFinal!==undefined&&!isNaN(d.calcFinal)?d.calcFinal:0), 0);
   const dyeTotalFinal = dyeRows.reduce((s,d)=> s + (d.final!==""&&!isNaN(d.final)?d.final:0), 0);
 
   const chemRows = L.chems.map(c=>{
@@ -4573,7 +4934,7 @@ function computeLab(){
   const chemTotalFinal = chemRows.reduce((s,c)=> s + (c.final!==""&&!isNaN(c.final)?c.final:0), 0);
 
   const add = computeAddition(L, dyeRows);
-  return {ratio, baseAdj, extraAdj, finalAdj, dyeRows, dyeTotalFinal, chemRows, chemTotalFinal, add};
+  return {ratio, baseAdj, extraAdj, finalAdj, qadj, dyeRows, dyeTotalCalc, dyeTotalFinal, chemRows, chemTotalFinal, add};
 }
 
 /* ============================================================
@@ -4657,10 +5018,10 @@ function updateDyeOutputs(computed){
     row.querySelector('[data-out="perKgM1"]').textContent = r.perKgM1===""? "—" : fmt(r.perKgM1);
     row.querySelector('[data-out="perKgM2before"]').textContent = r.perKgM2before===""? "—" : fmt(r.perKgM2before);
     row.querySelector('[data-out="adjApplied"]').textContent = r.adjApplied===""? "—" : fmt(r.adjApplied);
-    row.querySelector('[data-out="final"]').textContent = r.final===""? "—" : fmt(r.final);
+    row.querySelector('[data-out="final"]').innerHTML = finalCellHtml(r, computed.qadj, fmt);
   });
   document.getElementById("out_dyeTotalM1").textContent = fmt2(computed.dyeTotalM1);
-  document.getElementById("out_dyeTotalFinal").textContent = fmt2(computed.dyeTotalFinal);
+  document.getElementById("out_dyeTotalFinal").innerHTML = finalCellHtml({final:computed.dyeTotalFinal, calcFinal:computed.dyeTotalCalc}, computed.qadj, fmt2);
 }
 
 function buildChemRows(){
@@ -4714,6 +5075,7 @@ function computeM2M(){
   const m1Ratio = m1T > 0 ? num(M.m1Cap)/m1T : NaN;
   const m2Ratio = m2T > 0 ? num(M.m2Cap)/m2T : NaN;
   const adjPct = (!isNaN(m1Ratio) && !isNaN(m2Ratio)) ? (m1Ratio - m2Ratio) * 1.5 : NaN;
+  const qadj = qtyAdjCalc(M);
 
   const dyeRows = M.dyes.map(d=>{
     if(!hasVal(d.qty) || d.qty===""){
@@ -4723,9 +5085,11 @@ function computeM2M(){
     const perKgM1 = m1T > 0 ? m1Qty/m1T : NaN;
     const perKgM2before = (!isNaN(perKgM1) && m2T > 0) ? perKgM1*m2T : NaN;
     const adjApplied = (!isNaN(perKgM2before) && !isNaN(adjPct)) ? -perKgM2before*adjPct/100 : NaN;
-    const final = (!isNaN(perKgM2before) && !isNaN(adjPct)) ? perKgM2before*(1-adjPct/100) : NaN;
-    return {...d, perKgM1, perKgM2before, adjApplied, final};
+    const calcFinal = (!isNaN(perKgM2before) && !isNaN(adjPct)) ? perKgM2before*(1-adjPct/100) : NaN;
+    const final = !isNaN(calcFinal) ? calcFinal*qadj.factor : NaN;
+    return {...d, perKgM1, perKgM2before, adjApplied, calcFinal, final};
   });
+  const dyeTotalCalc = dyeRows.reduce((s,d)=> s + (d.calcFinal!==undefined&&!isNaN(d.calcFinal)?d.calcFinal:0), 0);
   const dyeTotalM1 = M.dyes.reduce((s,d)=> s + (hasVal(d.qty)?num(d.qty):0), 0);
   const dyeTotalFinal = dyeRows.reduce((s,d)=> s + (d.final!==""&&!isNaN(d.final)?d.final:0), 0);
 
@@ -4740,7 +5104,7 @@ function computeM2M(){
   const chemTotalFinal = chemRows.reduce((s,c)=> s + (c.final!==""&&!isNaN(c.final)?c.final:0), 0);
 
   const add = computeAddition(M, dyeRows);
-  return {m1Ratio, m2Ratio, adjPct, dyeRows, dyeTotalM1, dyeTotalFinal, chemRows, chemTotalFinal, add};
+  return {m1Ratio, m2Ratio, adjPct, qadj, dyeRows, dyeTotalM1, dyeTotalCalc, dyeTotalFinal, chemRows, chemTotalFinal, add};
 }
 
 /* ============================================================
@@ -4759,6 +5123,8 @@ function getActiveModel(){
       tapeQty: state.lab.tapeQty,
       capLabel: state.lab.capLabel,
       ratio: c.ratio,
+      operator: (calcOperator("lab").o || {}).name || "",
+      qtyAdj: c.qadj,
       add: modelAdd(c),
       dyes: modelDyes(c),
       chems: c.chemRows.map(cc=>({name:cc.name, final:cc.final}))
@@ -4773,6 +5139,8 @@ function getActiveModel(){
       tapeQty: state.m2m.m2Tape,
       capLabel: state.m2m.m2CapLabel,
       ratio: c.m2Ratio,
+      operator: (calcOperator("m2m").o || {}).name || "",
+      qtyAdj: c.qadj,
       add: modelAdd(c),
       dyes: modelDyes(c),
       chems: c.chemRows.map(cc=>({name:cc.name, final:cc.final}))
@@ -4910,13 +5278,14 @@ function recipeCardHTML(model){
 
       <div class="m-item"><b>Invoice No</b><span>${esc(o.invoiceNo)}</span></div>
       <div class="m-item"><b>Batch No / Lot No</b><span>${esc(o.batchNo)}</span></div>
-      ${isAdd ? `<div class="m-item"><b>Shade Result (1st batch)</b><span>${esc(addResultText(model.add))}</span></div>` : `<div class="m-item"></div>`}
+      ${isAdd ? `<div class="m-item"><b>Shade Result (1st batch)</b><span>${esc(addResultText(model.add))}</span></div>` : `<div class="m-item"><b>Operator</b><span>${esc(model.operator || "")}</span></div>`}
     </div>
 
     <div class="two-col">
       <div>
         <div class="card-table-title">${isAdd ? "Addition Recipe — Dyes" : "Final Recipe — Dyes"}</div>
         <table><thead>${dyeHead}</thead><tbody>${dyeHtml}</tbody></table>
+        ${(!isAdd && model.qtyAdj && model.qtyAdj.on) ? `<div class="qadj-print">Final dye qty adjusted: <b>${esc(qtyAdjText(model.qtyAdj))}</b> on all dyes</div>` : ""}
       </div>
       <div>
         <div class="card-table-title">Chemicals</div>
@@ -5131,18 +5500,48 @@ function updateAddOutputs(p, computed){
 }
 
 /* ---------------- master recalc ---------------- */
+function qadjState(p){ return p === "lab" ? state.lab : state.m2m; }
+function initQtyAdjPanels(){
+  document.querySelectorAll(".qadj-dir").forEach(b=>b.addEventListener("click", ()=>{
+    if(!can("recipe.edit")) return;
+    qtyAdjOf(qadjState(b.dataset.p)).dir = b.dataset.dir === "minus" ? "minus" : "plus";
+    recalcAndRender();
+  }));
+  ["lab","m2m"].forEach(p=>{
+    document.getElementById(p + "_qadjPct").addEventListener("input", e=>{ qtyAdjOf(qadjState(p)).pct = e.target.value; recalcAndRender(); });
+  });
+  document.querySelectorAll(".qadj-clear").forEach(b=>b.addEventListener("click", ()=>{
+    if(!can("recipe.edit")) return;
+    const a = qtyAdjOf(qadjState(b.dataset.p)); a.pct = ""; a.dir = "plus";
+    recalcAndRender();
+  }));
+}
+function syncQtyAdjUI(p, c){
+  const a = qtyAdjOf(qadjState(p)), q = c.qadj;
+  const inp = document.getElementById(p + "_qadjPct"); if(!inp) return;
+  if(document.activeElement !== inp && inp.value !== String(a.pct)) inp.value = a.pct;
+  document.querySelectorAll('.qadj-dir[data-p="' + p + '"]').forEach(b=>{ const on = b.dataset.dir === a.dir; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+  const box = document.getElementById(p + "_qadjBox"); box.classList.toggle("active", q.on); box.classList.toggle("minus", a.dir === "minus");
+  const out = document.getElementById(p + "_qadjOut");
+  if(q.on){
+    out.innerHTML = "Shob dye er final qty <b>" + esc(qtyAdjText(q)) + "</b> " + (q.signed > 0 ? "barano" : "komano") + " hoyeche. Dye total: <b>" + fmt2(c.dyeTotalCalc) + "</b> &rarr; <b>" + fmt2(c.dyeTotalFinal) + "</b>" +
+      (q.signed < 0 && q.pct >= 100 ? ' <span style="color:var(--red-dark);font-weight:800">(100% ba beshi komale qty 0 hoye jay)</span>' : "");
+  } else out.textContent = "Shob dye er final qty te ekshathe % barano ba komano jabe. Chemical e kono change hobe na.";
+}
 function recalcAndRender(){
   const labComputed = computeLab();
   renderLabMachineOutputs(labComputed);
   updateLabDyeOutputs(labComputed);
   updateLabChemOutputs(labComputed);
   updateAddOutputs("lab", labComputed);
+  syncQtyAdjUI("lab", labComputed);
 
   const m2mComputed = computeM2M();
   renderM2MMachineOutputs(m2mComputed);
   updateDyeOutputs(m2mComputed);
   updateChemOutputs(m2mComputed);
   updateAddOutputs("m2m", m2mComputed);
+  syncQtyAdjUI("m2m", m2mComputed);
 
   renderSourceLabels();
   const model = getActiveModel();
@@ -5151,6 +5550,8 @@ function recalcAndRender(){
   flagRowIssues();
   updateShadeSwatches();
   markUnsaved();
+  if(typeof currentViewId !== "undefined" && currentViewId === "view-costing" && typeof renderCostCurrent === "function") renderCostCurrent();
+  if(typeof syncOperatorUI === "function") syncOperatorUI();
 }
 
 /* ---------------- live row flags (negative values / duplicate names) ---------------- */
@@ -5572,12 +5973,17 @@ const PERMS = [
   ["sync.manage",    "Change cloud sync settings, force push / pull"],
   ["audit.view",     "View the activity log"],
   ["users.manage",   "Manage users and roles"],
+  ["cost.view",      "View costing (raw material cost per batch / OA)"],
+  ["cost.prices",    "Set material prices & re-cost batches"],
+  ["kpi.view",       "View KPI Board (operator performance)"],
+  ["kpi.manage",     "Manage operators, machines, KPI settings & RFT overrides"],
+  ["report.view",    "View reports (production, materials, shades, machines, RFT)"],
   ["system.admin",   "Company header, full backup / restore, danger zone"]
 ];
 const PERM_KEYS = PERMS.map(p=>p[0]);
 const DEFAULT_ROLES = {
   admin:   {name:"Admin",   perms:"*"},
-  manager: {name:"Manager", perms:["recipe.edit","recipe.save","recipe.print","recipe.delete","library.export","library.import","lists.manage","sync.run","audit.view"]},
+  manager: {name:"Manager", perms:["recipe.edit","recipe.save","recipe.print","recipe.delete","library.export","library.import","lists.manage","sync.run","audit.view","cost.view","cost.prices","kpi.view","kpi.manage","report.view"]},
   chemist: {name:"Chemist", perms:["recipe.edit","recipe.save","recipe.print","library.export","sync.run"]},
   viewer:  {name:"Viewer",  perms:["recipe.print"]}
 };
@@ -6388,6 +6794,8 @@ const AUDIT_LABEL = {"login":"Signed in","logout":"Signed out","login.failed":"F
   "user.create":"User created","user.update":"User updated","user.password":"Password reset by Admin","user.enable":"User enabled","user.disable":"User disabled","user.delete":"User deleted",
   "roles.update":"Roles changed","roles.reset":"Roles reset","recipe.create":"Recipe saved","recipe.update":"Recipe updated","recipe.delete":"Recipe deleted","recipe.duplicate":"Recipe duplicated",
   "recipe.import":"Recipes imported","library.clear":"Library cleared","lists.update":"Lists changed","lists.reset":"Lists reset","sync.config":"Cloud settings","sync.force":"Force sync",
+  "cost.prices":"Material prices", "cost.recost":"Re-costed",
+  "report.export":"Report exported", "kpi.operator":"Operator", "kpi.settings":"KPI settings", "kpi.override":"RFT override",
   "backup.full":"Full backup downloaded","backup.restore":"Backup restored","print":"Card printed"};
 let auditTerm = "";
 function auditRows(){
@@ -6554,6 +6962,8 @@ function saveCurrentToLibrary(asNew){
     snapshot: clone(src === "lab" ? state.lab : state.m2m),
     modifiedAt: new Date().toISOString()
   }));
+  const cst = costSnapshot(getActiveModel()); if(cst) entry.cost = cst;
+  entry.operator = operatorStamp(src);
   const saved = Store.put("recipes", entry);
   currentEntry = {id:saved.id, source:src};
   audit(existing ? "recipe.update" : "recipe.create", [saved.customer, saved.shade, saved.batchNo && "Batch " + saved.batchNo].filter(Boolean).join(" · ") || saved.id);
@@ -6594,7 +7004,8 @@ function duplicateLibraryEntry(id){
   if(!entry) return;
   const u = currentUser();
   const c = clone(entry);
-  ["_sy","updatedAt","updatedBy","device","modifiedAt"].forEach(k=>delete c[k]);
+  ["_sy","updatedAt","updatedBy","device","modifiedAt","cost","kpi","operator"].forEach(k=>delete c[k]);
+  if(c.snapshot) delete c.snapshot.parentId;
   c.id = newId("job");
   c.savedAt = new Date().toISOString();
   c.createdBy = u ? (u.name || u.username) : "";
@@ -6617,6 +7028,7 @@ function startAddition(id){
   const lab = entry.source === "lab", S = lab ? state.lab : state.m2m;
   const same = getLibrary().filter(e=>e.customer === entry.customer && e.shade === entry.shade && e.oaNo === entry.oaNo && additionNo(e.batchNo) > 0).length;
   const n = same + 1;
+  S.parentId = (additionNo(entry.batchNo) > 0 && entry.snapshot && entry.snapshot.parentId) ? entry.snapshot.parentId : entry.id;   // KPI: link the addition to its batch
   S.order.batchNo = "Addition " + n;
   S.add = {dir:"lighter", pct:""};
   S.dyes.forEach(d=>{ d.addPct = ""; });
@@ -6892,7 +7304,7 @@ const IC_SHIELD = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColo
    ============================================================ */
 const BACKUP_KEY = "texfasteners_last_backup_v1";
 const VIEW_TITLES = {"view-home":"Home","view-calculator":"Calculator","view-recipe":"Recipe Card","view-prescription":"Prescription Card",
-  "view-library":"Recipe Library","view-libraryPrint":"Library Export","view-settings":"Settings","view-users":"Users & Roles","view-audit":"Activity Log","view-sync":"Cloud Sync"};
+  "view-library":"Recipe Library","view-libraryPrint":"Library Export","view-settings":"Settings","view-users":"Users & Roles","view-audit":"Activity Log","view-sync":"Cloud Sync","view-costing":"Costing","view-kpi":"KPI Board","view-report":"Report"};
 
 function uiConfirm(o){
   return new Promise(resolve=>{
@@ -7779,6 +8191,10 @@ function onDataChanged(set){
       if(set.has("users") || set.has("config")){ applyPerms(); updateSidebar(); if(currentViewId === "view-users") renderUsers(); if(currentViewId === "view-settings") populateAccount(); }
       if(set.has("config")){ const m = getActiveModel(); renderRecipeCard(m); renderPrescriptionCard(m); }
       if(set.has("recipes")){ renderLibraryTable(); if(currentViewId === "view-home") renderHome(); }
+      if((set.has("recipes") || set.has("config")) && currentViewId === "view-costing") renderCosting();
+      if((set.has("recipes") || set.has("config")) && currentViewId === "view-kpi") renderKpi();
+      if((set.has("recipes") || set.has("config")) && currentViewId === "view-report") renderReport();
+      if(set.has("config")) syncOperatorUI();
       if(set.has("audit") && currentViewId === "view-audit") renderAudit();
       if(currentViewId === "view-sync") renderSyncView();
     }
@@ -7941,6 +8357,988 @@ function afterLogin(){
   Sync.start();
 }
 
+/* ============================================================
+   COSTING — raw material cost of one dyeing batch
+   Tape (kg) + every Dye (g) + every Chemical (g / ml) + Water (L)
+   Prices (synced, config "prices"):
+     tape  : price per kg, by Tape Type (Mat Type) — default price for the rest
+     dye   : price per kg
+     chem  : price per kg (or per litre for liquids)
+     water : price per 1000 L
+   Recipe quantities are in grams (dye & chemical) — unit can be switched to kg.
+   When a job is saved, its cost is frozen into the Library record
+   (entry.cost) with the prices of that day. Old jobs / jobs without a
+   frozen cost use today's prices.
+   ============================================================ */
+const DEFAULT_PRICES = {currency:"Tk", unit:"g", water:"", tapeDefault:"", tape:{}, dye:{}, chem:{}};
+const normName = s => String(s || "").trim().replace(/\s+/g, " ").toLowerCase();
+function getPrices(){
+  const p = getConfig("prices", null) || {};
+  const out = Object.assign(clone(DEFAULT_PRICES), p);
+  ["tape","dye","chem"].forEach(k=>{ if(!out[k] || typeof out[k] !== "object") out[k] = {}; });
+  if(out.unit !== "kg") out.unit = "g";
+  out.currency = String(out.currency || "Tk").slice(0, 8);
+  return out;
+}
+function priceOf(map, name){
+  const k = normName(name);
+  if(!k || !map || !Object.prototype.hasOwnProperty.call(map, k)) return undefined;
+  const v = map[k];
+  return (v === "" || v === null || !isFinite(v)) ? undefined : Number(v);
+}
+const isPrice = v => v !== "" && v !== null && v !== undefined && isFinite(v);
+function money(n){ return (isFinite(n) ? Number(n) : 0).toLocaleString("en-IN", {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function qtyTxt(n){ return isFinite(n) ? fmt(n) : "—"; }
+
+/* cost of one computed model (same shape as getActiveModel / buildModelFromEntry) */
+function costOfModel(model, P){
+  P = P || getPrices();
+  const isAdd = !!(model.add && model.add.on);
+  const div = P.unit === "kg" ? 1 : 1000;
+  const lines = [], missing = [];
+  const push = (type, name, qty, unit, qtyBase, rate, rateUnit)=>{
+    const amount = (isPrice(rate) && isFinite(qtyBase)) ? qtyBase * rate : 0;
+    if(!isPrice(rate) && qtyBase > 0) missing.push(type + ": " + (name || "(no name)"));
+    lines.push({type, name: name || "", qty, unit, rate: isPrice(rate) ? rate : null, rateUnit, amount});
+  };
+  const tapeKg = num(model.tapeQty);
+  if(!isAdd && tapeKg > 0){
+    const tName = String((model.order && model.order.matType) || "").trim();
+    let rate = priceOf(P.tape, tName);
+    if(!isPrice(rate) && isPrice(P.tapeDefault)) rate = Number(P.tapeDefault);
+    push("Tape", tName || "Tape", tapeKg, "kg", tapeKg, rate, "kg");
+  }
+  (model.dyes || []).forEach(d=>{
+    const q = Number(d.final);
+    if(!(q > 0)) return;
+    push("Dye", d.name, q, P.unit, q / div, priceOf(P.dye, d.name), "kg");
+  });
+  (model.chems || []).forEach(c=>{
+    const q = Number(c.final);
+    if(!(q > 0)) return;
+    push("Chemical", c.name, q, P.unit, q / div, priceOf(P.chem, c.name), "kg");
+  });
+  const litres = num(model.liquorCap);
+  if(!isAdd && litres > 0){
+    const rate = isPrice(P.water) ? Number(P.water) : undefined;
+    push("Water", "Water", litres, "L", litres / 1000, rate, "1000 L");
+  }
+  const sum = t => lines.filter(l=>l.type === t).reduce((s,l)=>s + l.amount, 0);
+  const tot = {tape:sum("Tape"), dye:sum("Dye"), chem:sum("Chemical"), water:sum("Water")};
+  tot.total = tot.tape + tot.dye + tot.chem + tot.water;
+  return {at:new Date().toISOString(), currency:P.currency, unit:P.unit, isAdd, tapeKg: isAdd ? 0 : tapeKg, litres: isAdd ? 0 : litres,
+    lines, missing, tot, perKg: (!isAdd && tapeKg > 0) ? tot.total / tapeKg : NaN};
+}
+function costSnapshot(model){ try{ return costOfModel(model); }catch(e){ console.warn("costing failed", e); return null; } }
+
+/* ---------- register rows from the Library ---------- */
+let costBasis = "saved", costTerm = "", costFrom = "", costTo = "";
+function entryDate(e){ const d = e.snapshot && e.snapshot.order && e.snapshot.order.date; return (typeof d === "string" && /^\d{4}-\d{2}-\d{2}/.test(d)) ? d.slice(0,10) : String(e.savedAt || "").slice(0,10); }
+function costRows(){
+  const P = getPrices(), t = costTerm.trim().toLowerCase();
+  return getLibrary().map(e=>{
+    const d = entryDate(e);
+    if(costFrom && d < costFrom) return null;
+    if(costTo && d > costTo) return null;
+    if(t && ![e.oaNo, e.customer, e.shade, e.batchNo, e.machineName, e.invoiceNo].some(v=>String(v || "").toLowerCase().includes(t))) return null;
+    const frozen = costBasis === "saved" && e.cost && e.cost.tot;
+    const c = frozen ? e.cost : costOfModel(buildModelFromEntry(e), P);
+    return {e, d, c, frozen: !!frozen};
+  }).filter(Boolean).sort((a,b)=>b.d.localeCompare(a.d) || String(b.e.savedAt).localeCompare(String(a.e.savedAt)));
+}
+function oaSummary(rows){
+  const m = new Map();
+  rows.forEach(r=>{
+    const k = String(r.e.oaNo || "").trim() || "(no OA)";
+    const g = m.get(k) || {oa:k, customer:r.e.customer || "", shades:new Set(), batches:0, adds:0, tapeKg:0, tape:0, dye:0, chem:0, water:0, total:0};
+    g.batches++; if(r.c.isAdd) g.adds++;
+    if(r.e.shade) g.shades.add(r.e.shade);
+    g.tapeKg += r.c.tapeKg || 0; g.tape += r.c.tot.tape; g.dye += r.c.tot.dye; g.chem += r.c.tot.chem; g.water += r.c.tot.water; g.total += r.c.tot.total;
+    m.set(k, g);
+  });
+  return Array.from(m.values()).sort((a,b)=>b.total - a.total);
+}
+
+/* ---------- render: current job ---------- */
+function costLinesTable(c, cur){
+  const rows = c.lines.map(l=>`<tr${l.rate === null ? ' class="cost-miss"' : ""}><td>${esc(l.type)}</td><td>${esc(l.name)}</td><td class="num">${qtyTxt(l.qty)} ${esc(l.unit)}</td><td class="num">${l.rate === null ? '<span class="miss-tag">no price</span>' : esc(cur) + " " + money(l.rate) + " / " + esc(l.rateUnit)}</td><td class="num"><b>${money(l.amount)}</b></td></tr>`).join("");
+  return `<table class="cost-table"><thead><tr><th>Type</th><th>Item</th><th class="num">Qty</th><th class="num">Price</th><th class="num">Amount (${esc(cur)})</th></tr></thead><tbody>${rows || '<tr><td colspan="5" class="empty-state">No quantities yet</td></tr>'}</tbody>
+    <tfoot><tr><td colspan="4">TOTAL</td><td class="num">${money(c.tot.total)}</td></tr></tfoot></table>`;
+}
+function costKpis(c, cur){
+  const k = (lbl, v, cls) => `<div class="cost-kpi ${cls || ""}"><span>${lbl}</span><b>${v}</b></div>`;
+  return `<div class="cost-kpis">${k("Tape", esc(cur) + " " + money(c.tot.tape))}${k("Dyes", esc(cur) + " " + money(c.tot.dye))}${k("Chemicals", esc(cur) + " " + money(c.tot.chem))}${k("Water", esc(cur) + " " + money(c.tot.water))}${k("Total RM cost", esc(cur) + " " + money(c.tot.total), "main")}${k("Cost / kg tape", isFinite(c.perKg) ? esc(cur) + " " + money(c.perKg) : "—", "main")}</div>`;
+}
+function renderCostCurrent(){
+  const box = $a("costCurrent"); if(!box) return;
+  const m = getActiveModel(), c = costOfModel(m), o = m.order, cur = c.currency;
+  $a("costCurMeta").innerHTML = `<b>${esc(m.sourceLabel)}</b> · OA No: <b>${esc(o.oaNo) || "—"}</b> · Customer: <b>${esc(o.customer) || "—"}</b> · Shade: <b>${esc(o.shade) || "—"}</b> · Batch: <b>${esc(o.batchNo) || "—"}</b> · Machine: <b>${esc(m.machineName) || "—"}</b> · Tape type: <b>${esc(o.matType) || "—"}</b>` +
+    (currentEntry && Store.get("recipes", currentEntry.id) ? ' · <span class="chip m2m">Saved in Library</span>' : ' · <span class="chip warn-chip">Not saved yet</span>');
+  box.innerHTML = (c.isAdd ? '<p class="hint"><b>Addition batch:</b> only the added dyes/chemicals are costed — tape and water were already counted in the 1st batch.</p>' : "") +
+    costKpis(c, cur) + costLinesTable(c, cur) +
+    (c.missing.length ? `<p class="cost-warn">Price not set for ${c.missing.length} item(s): ${esc(c.missing.join(", "))}. Set them in <b>Material Prices</b> below — they are counted as 0 now.</p>` : "");
+}
+
+/* ---------- render: register + OA summary ---------- */
+function renderCostRegister(){
+  if(!$a("costBody")) return;
+  const rows = costRows(), cur = getPrices().currency;
+  const T = rows.reduce((a,r)=>{ a.kg += r.c.tapeKg || 0; a.total += r.c.tot.total; a.miss += r.c.missing.length ? 1 : 0; return a; }, {kg:0, total:0, miss:0});
+  $a("costSummary").innerHTML = `<b>${rows.length}</b> batch(es) · Tape <b>${fmt2(T.kg)} kg</b> · Total RM cost <b>${esc(cur)} ${money(T.total)}</b> · Avg cost/kg <b>${T.kg > 0 ? esc(cur) + " " + money(T.total / T.kg) : "—"}</b>` +
+    (T.miss ? ` · <span class="miss-tag">${T.miss} batch(es) have items without price</span>` : "");
+  const cP = can("cost.prices");
+  $a("costBody").innerHTML = rows.map(r=>`<tr>
+      <td style="white-space:nowrap">${esc(dateDisplay(r.d))}</td><td><b>${esc(r.e.oaNo)}</b></td><td>${esc(r.e.customer)}</td><td>${esc(r.e.shade)}</td>
+      <td>${esc(r.e.batchNo)}${r.c.isAdd ? ' <span class="chip lab">Add</span>' : ""}</td><td>${esc(r.e.machineName)}</td>
+      <td class="num">${r.c.tapeKg ? fmt2(r.c.tapeKg) : "—"}</td><td class="num">${money(r.c.tot.tape)}</td><td class="num">${money(r.c.tot.dye)}</td><td class="num">${money(r.c.tot.chem)}</td><td class="num">${money(r.c.tot.water)}</td>
+      <td class="num"><b>${money(r.c.tot.total)}</b>${r.c.missing.length ? ' <span class="miss-dot" title="Some items have no price">!</span>' : ""}</td><td class="num">${isFinite(r.c.perKg) ? money(r.c.perKg) : "—"}</td>
+      <td><span class="chip ${r.frozen ? "m2m" : "warn-chip"}" title="${r.frozen ? "Prices frozen when saved: " + esc(formatSavedAt(r.c.at)) : "Calculated with today's prices"}">${r.frozen ? "Saved" : "Current"}</span></td>
+      <td><div class="lib-actions-cell"><button type="button" class="btn secondary btn-sm" data-costview="${esc(r.e.id)}">View</button>${cP ? `<button type="button" class="btn secondary btn-sm" data-recost="${esc(r.e.id)}" title="Freeze today's prices into this batch">Re-cost</button>` : ""}</div></td>
+    </tr>`).join("") || '<tr><td colspan="15" class="empty-state">No saved batches match. Save a recipe from the Calculator — its costing appears here.</td></tr>';
+  const oa = oaSummary(rows);
+  $a("costOaBody").innerHTML = oa.map(g=>`<tr><td><b>${esc(g.oa)}</b></td><td>${esc(g.customer)}</td><td>${esc(Array.from(g.shades).join(", "))}</td><td class="num">${g.batches}${g.adds ? ` <span class="small-note">(${g.adds} add.)</span>` : ""}</td>
+      <td class="num">${fmt2(g.tapeKg)}</td><td class="num">${money(g.tape)}</td><td class="num">${money(g.dye)}</td><td class="num">${money(g.chem)}</td><td class="num">${money(g.water)}</td><td class="num"><b>${money(g.total)}</b></td><td class="num">${g.tapeKg > 0 ? money(g.total / g.tapeKg) : "—"}</td></tr>`).join("") ||
+    '<tr><td colspan="11" class="empty-state">No data</td></tr>';
+  $a("costCur1").textContent = $a("costCur2").textContent = cur;
+}
+
+/* ---------- material prices ---------- */
+function priceItems(){
+  const used = {tape:new Set(), dye:new Set(), chem:new Set()};
+  Store.all("recipes").forEach(e=>{
+    const s = e.snapshot || {};
+    if(s.order && s.order.matType) used.tape.add(String(s.order.matType).trim());
+    (s.dyes || []).forEach(d=>{ if(d.name && String(d.name).trim()) used.dye.add(String(d.name).trim()); });
+    (s.chems || []).forEach(c=>{ if(c.name && String(c.name).trim()) used.chem.add(String(c.name).trim()); });
+  });
+  const P = getPrices();
+  const merge = (base, extra, map)=>{
+    const seen = new Map();
+    base.concat(Array.from(extra)).forEach(n=>{ const k = normName(n); if(k && !seen.has(k)) seen.set(k, {key:k, name:n, used:extra.has(n)}); });
+    Object.keys(map || {}).forEach(k=>{ if(!seen.has(k)) seen.set(k, {key:k, name:k, used:false}); });
+    return Array.from(seen.values()).sort((a,b)=>(b.used - a.used));   // used items first, original order kept
+  };
+  return {
+    tape: merge((LISTS.mats || []).slice(), used.tape, P.tape),
+    dye: merge(DYE_LIB.map(d=>d.name), used.dye, P.dye),
+    chem: merge((LISTS.chems || []).slice(), used.chem, P.chem)
+  };
+}
+let priceTerm = "";
+function renderPrices(){
+  if(!$a("prTapeBody")) return;
+  const f = document.activeElement;
+  if(f && f.closest && f.closest("#costPrices") && f.matches("input,select")) return;   // don't wipe what is being typed
+  const P = getPrices(), it = priceItems(), ed = can("cost.prices"), t = priceTerm.trim().toLowerCase();
+  $a("prCurrency").value = P.currency; $a("prUnit").value = P.unit; $a("prWater").value = isPrice(P.water) ? P.water : ""; $a("prTapeDef").value = isPrice(P.tapeDefault) ? P.tapeDefault : "";
+  const row = (kind, x, map) => {
+    const v = priceOf(map, x.key);
+    if(t && !x.name.toLowerCase().includes(t)) return "";
+    return `<tr${x.used && !isPrice(v) ? ' class="cost-miss"' : ""}><td>${esc(x.name)}${x.used ? ' <span class="chip m2m">used</span>' : ""}</td><td class="num"><input class="pr-in" type="text" inputmode="decimal" data-kind="${kind}" data-key="${esc(x.key)}" value="${isPrice(v) ? esc(String(v)) : ""}" placeholder="—"${ed ? "" : " disabled"}></td></tr>`;
+  };
+  $a("prTapeBody").innerHTML = it.tape.map(x=>row("tape", x, P.tape)).join("") || '<tr><td colspan="2" class="empty-state">No tape types — add them in Settings &rarr; Mat Types</td></tr>';
+  $a("prDyeBody").innerHTML = it.dye.map(x=>row("dye", x, P.dye)).join("");
+  $a("prChemBody").innerHTML = it.chem.map(x=>row("chem", x, P.chem)).join("");
+  ["prCurrency","prUnit","prWater","prTapeDef","prSave"].forEach(id=>{ $a(id).disabled = !ed; });
+  const miss = it.dye.filter(x=>x.used && !isPrice(priceOf(P.dye, x.key))).length + it.chem.filter(x=>x.used && !isPrice(priceOf(P.chem, x.key))).length;
+  $a("prMissing").textContent = miss ? miss + " used item(s) have no price (highlighted)." : "";
+}
+function renderCosting(){
+  if(currentViewId !== "view-costing") return;
+  renderCostCurrent(); renderCostRegister(); renderPrices();
+}
+
+/* ---------- events ---------- */
+$a("costSearch").addEventListener("input", e=>{ costTerm = e.target.value; renderCostRegister(); });
+$a("costFrom").addEventListener("change", e=>{ costFrom = e.target.value; renderCostRegister(); });
+$a("costTo").addEventListener("change", e=>{ costTo = e.target.value; renderCostRegister(); });
+$a("costBasis").addEventListener("change", e=>{ costBasis = e.target.value === "current" ? "current" : "saved"; renderCostRegister(); });
+$a("prSearch").addEventListener("input", e=>{ priceTerm = e.target.value; const a = document.activeElement; a.blur(); renderPrices(); a.focus(); });
+$a("costSaveJob").addEventListener("click", ()=>{ saveCurrentToLibrary(); renderCosting(); });
+$a("costToPrices").addEventListener("click", ()=>{ $a("costPrices").scrollIntoView({block:"start"}); });
+$a("prSave").addEventListener("click", ()=>{
+  if(!need("cost.prices")) return;
+  const P = getPrices();
+  P.currency = $a("prCurrency").value.trim().slice(0, 8) || "Tk";
+  P.unit = $a("prUnit").value === "kg" ? "kg" : "g";
+  const nv = v => { v = String(v).trim().replace(",", "."); return v === "" ? "" : (isFinite(Number(v)) && Number(v) >= 0 ? Number(v) : null); };
+  const w = nv($a("prWater").value), td = nv($a("prTapeDef").value);
+  if(w === null || td === null){ toast("Prices must be numbers (0 or more)"); return; }
+  P.water = w; P.tapeDefault = td;
+  let bad = 0, n = 0;
+  document.querySelectorAll("#costPrices .pr-in").forEach(inp=>{
+    const v = nv(inp.value), map = P[inp.dataset.kind];
+    if(v === null){ bad++; inp.classList.add("bad"); return; }
+    inp.classList.remove("bad");
+    if(v === "") delete map[inp.dataset.key]; else { map[inp.dataset.key] = v; n++; }
+  });
+  if(bad){ toast(bad + " price(s) are not valid numbers"); return; }
+  setConfig("prices", P);
+  audit("cost.prices", n + " item prices · water " + (w === "" ? "—" : w) + " / 1000 L · unit " + P.unit);
+  document.activeElement && document.activeElement.blur && document.activeElement.blur();
+  renderCosting(); toast("Prices saved — synced to all devices");
+});
+function recost(ids){
+  if(!need("cost.prices")) return 0;
+  let n = 0;
+  ids.forEach(id=>{
+    const e = Store.get("recipes", id); if(!e) return;
+    const c = clone(e); c.cost = costSnapshot(buildModelFromEntry(e));
+    Store.put("recipes", c); n++;
+  });
+  if(n) audit("cost.recost", n + " batch(es) re-costed with current prices");
+  return n;
+}
+$a("costRecostAll").addEventListener("click", async ()=>{
+  if(!need("cost.prices")) return;
+  const rows = costRows(); if(!rows.length){ toast("No batches shown"); return; }
+  if(!(await uiConfirm({title:"Re-cost " + rows.length + " batch(es)?", message:"The batches shown now get today's prices frozen into them. Their old saved cost is replaced.", ok:"Re-cost"}))) return;
+  toast(recost(rows.map(r=>r.e.id)) + " batch(es) re-costed"); renderCosting();
+});
+$a("costBody").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.recost){ if(recost([b.dataset.recost])) { toast("Re-costed with today's prices"); renderCosting(); } return; }
+  if(b.dataset.costview) showCostDetail(b.dataset.costview);
+});
+function costDetailHtml(e, c){
+  const cur = c.currency;
+  return `<div class="cost-detail-meta">OA No: <b>${esc(e.oaNo) || "—"}</b> · Customer: <b>${esc(e.customer) || "—"}</b> · Shade: <b>${esc(e.shade) || "—"}</b> · Batch: <b>${esc(e.batchNo) || "—"}</b> · Machine: <b>${esc(e.machineName) || "—"}</b> · Date: <b>${esc(dateDisplay(entryDate(e)))}</b></div>` +
+    costKpis(c, cur) + costLinesTable(c, cur) +
+    `<p class="small-note">${e.cost && costBasis === "saved" ? "Prices frozen when saved: " + esc(formatSavedAt(c.at)) : "Calculated with today's prices"}</p>`;
+}
+function showCostDetail(id){
+  const e = Store.get("recipes", id); if(!e) return;
+  const c = (costBasis === "saved" && e.cost && e.cost.tot) ? e.cost : costOfModel(buildModelFromEntry(e));
+  const back = document.createElement("div"); back.className = "modal-back no-print";
+  back.innerHTML = '<div class="modal cost-modal" role="dialog" aria-modal="true"><div class="modal-top"></div><h3>Batch costing</h3><div class="cost-modal-body"></div><div class="modal-actions"><button type="button" class="btn secondary" data-x="print">Print</button><button type="button" class="btn" data-x="close">Close</button></div></div>';
+  back.querySelector(".cost-modal-body").innerHTML = costDetailHtml(e, c);
+  const close = ()=>{ document.removeEventListener("keydown", key, true); back.remove(); };
+  const key = ev=>{ if(ev.key === "Escape"){ ev.preventDefault(); close(); } };
+  back.addEventListener("mousedown", ev=>{ if(ev.target === back) close(); });
+  back.querySelector('[data-x="close"]').addEventListener("click", close);
+  back.querySelector('[data-x="print"]').addEventListener("click", ()=>printCostDoc("Batch Raw Material Costing", costDetailHtml(e, c)));
+  document.addEventListener("keydown", key, true);
+  document.body.appendChild(back);
+}
+
+/* ---------- print (English) & Excel ---------- */
+function printCostDoc(title, inner){
+  const co = company();
+  const html = `<!doctype html><html><head><meta charset="utf-8"><title>${esc(title)}</title><style>
+    body{font-family:"Times New Roman",Times,serif;color:#000;margin:18mm 14mm;font-size:11pt;}
+    h1{font-size:16pt;margin:0;} .addr{font-size:9pt;margin:2px 0 10px;} h2{font-size:13pt;border-top:2px solid #000;border-bottom:1px solid #000;padding:4px 0;margin:8px 0 10px;text-transform:uppercase;letter-spacing:.04em;}
+    table{width:100%;border-collapse:collapse;margin:8px 0;font-size:10pt;} th,td{border:1px solid #000;padding:4px 6px;text-align:left;vertical-align:top;} th{background:#eee;}
+    .num{text-align:right;white-space:nowrap;} tfoot td{font-weight:bold;background:#f2f2f2;}
+    .cost-kpis{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;} .cost-kpi{border:1px solid #000;padding:4px 8px;min-width:120px;} .cost-kpi span{display:block;font-size:8pt;text-transform:uppercase;} .cost-kpi b{font-size:11pt;}
+    .chip,.miss-dot,button{display:none;} .miss-tag{font-style:italic;} .cost-miss td{background:#fff3f3;} .small-note,.cost-detail-meta{font-size:9pt;margin:4px 0;}
+    .sig{display:flex;justify-content:space-between;margin-top:40px;} .sig div{border-top:1px solid #000;width:30%;text-align:center;padding-top:4px;font-size:9pt;}
+    .ph{display:flex;align-items:center;gap:14px;margin-bottom:4px;} .ph img{height:58px;width:auto;} .ph .addr{margin:2px 0 0;}
+    h3{font-size:11pt;margin:12px 0 4px;text-transform:uppercase;} .pb{page-break-before:always;} .card-table-title{font-weight:bold;font-size:10pt;margin:10px 0 2px;text-transform:uppercase;}
+    figure.viz{margin:8px 0;page-break-inside:avoid;} figure.viz figcaption{font-weight:bold;font-size:10pt;margin-bottom:2px;} figure.viz svg{width:100%;height:auto;}
+    .vz-grid{stroke:#ddd;stroke-width:1;} .vz-base{stroke:#000;stroke-width:1;} .vz-target{stroke:#000;stroke-dasharray:4 3;} .vz-track{fill:#f1f1f1;}
+    .vz-ax,.vz-lbl,.vz-val{font-family:"Times New Roman",serif;font-size:10px;fill:#000;} .vz-legend{font-weight:normal;margin-left:10px;font-size:9pt;} .vz-legend i{display:inline-block;width:9px;height:9px;margin:0 3px 0 8px;}
+    .rpt-2col{display:grid;grid-template-columns:1fr 1fr;gap:10px;} .rpt-bw{display:flex;gap:8px;margin:6px 0;} .rpt-bw .bw{border:1px solid #000;padding:4px 8px;flex:1;} .rpt-bw span{display:block;font-size:8pt;text-transform:uppercase;} .rpt-bw em{display:block;font-size:9pt;}
+    .viz-empty{font-style:italic;font-size:9pt;}
+    @media print{.vz-legend i,figure.viz svg *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+    </style></head><body><div class="ph"><img src="${LOGO}" alt="Company logo"><div><h1>${esc(co.name)}</h1><div class="addr">${esc(co.addr)}</div></div></div><h2>${esc(title)}</h2>${inner}
+    <p class="small-note">Printed: ${esc(formatSavedAt(new Date().toISOString()))}</p><div class="sig"><div>Prepared by</div><div>Checked by</div><div>Approved by</div></div></body></html>`;
+  const fr = document.createElement("iframe");
+  fr.style.cssText = "position:fixed;right:0;bottom:0;width:0;height:0;border:0;";
+  document.body.appendChild(fr);
+  const d = fr.contentWindow.document; d.open(); d.write(html); d.close();
+  setTimeout(()=>{ try{ fr.contentWindow.focus(); fr.contentWindow.print(); }catch(e){} setTimeout(()=>fr.remove(), 60000); }, 300);
+}
+function registerPrintHtml(rows){
+  const cur = getPrices().currency, oa = oaSummary(rows);
+  const T = rows.reduce((a,r)=>{ a.kg += r.c.tapeKg || 0; ["tape","dye","chem","water","total"].forEach(k=>a[k] += r.c.tot[k]); return a; }, {kg:0, tape:0, dye:0, chem:0, water:0, total:0});
+  const filt = [costTerm && "Search: " + costTerm, costFrom && "From " + dateDisplay(costFrom), costTo && "To " + dateDisplay(costTo), costBasis === "current" ? "Prices: current" : "Prices: as saved"].filter(Boolean).join(" · ");
+  return `<p class="small-note">${esc(filt)} · Amounts in ${esc(cur)}</p>
+    <table><thead><tr><th>OA No</th><th>Customer</th><th>Shade</th><th class="num">Batches</th><th class="num">Tape (kg)</th><th class="num">Tape</th><th class="num">Dyes</th><th class="num">Chemicals</th><th class="num">Water</th><th class="num">Total</th><th class="num">Cost/kg</th></tr></thead><tbody>
+    ${oa.map(g=>`<tr><td>${esc(g.oa)}</td><td>${esc(g.customer)}</td><td>${esc(Array.from(g.shades).join(", "))}</td><td class="num">${g.batches}</td><td class="num">${fmt2(g.tapeKg)}</td><td class="num">${money(g.tape)}</td><td class="num">${money(g.dye)}</td><td class="num">${money(g.chem)}</td><td class="num">${money(g.water)}</td><td class="num">${money(g.total)}</td><td class="num">${g.tapeKg > 0 ? money(g.total/g.tapeKg) : "—"}</td></tr>`).join("")}
+    </tbody><tfoot><tr><td colspan="3">GRAND TOTAL</td><td class="num">${rows.length}</td><td class="num">${fmt2(T.kg)}</td><td class="num">${money(T.tape)}</td><td class="num">${money(T.dye)}</td><td class="num">${money(T.chem)}</td><td class="num">${money(T.water)}</td><td class="num">${money(T.total)}</td><td class="num">${T.kg > 0 ? money(T.total/T.kg) : "—"}</td></tr></tfoot></table>
+    <h2>Batch-wise Costing</h2>
+    <table><thead><tr><th>Date</th><th>OA No</th><th>Customer</th><th>Shade</th><th>Batch</th><th>Machine</th><th class="num">Tape (kg)</th><th class="num">Tape</th><th class="num">Dyes</th><th class="num">Chemicals</th><th class="num">Water</th><th class="num">Total</th><th class="num">Cost/kg</th></tr></thead><tbody>
+    ${rows.map(r=>`<tr><td>${esc(dateDisplay(r.d))}</td><td>${esc(r.e.oaNo)}</td><td>${esc(r.e.customer)}</td><td>${esc(r.e.shade)}</td><td>${esc(r.e.batchNo)}</td><td>${esc(r.e.machineName)}</td><td class="num">${r.c.tapeKg ? fmt2(r.c.tapeKg) : "—"}</td><td class="num">${money(r.c.tot.tape)}</td><td class="num">${money(r.c.tot.dye)}</td><td class="num">${money(r.c.tot.chem)}</td><td class="num">${money(r.c.tot.water)}</td><td class="num">${money(r.c.tot.total)}</td><td class="num">${isFinite(r.c.perKg) ? money(r.c.perKg) : "—"}</td></tr>`).join("")}
+    </tbody></table>`;
+}
+$a("costPrint").addEventListener("click", ()=>{
+  const rows = costRows(); if(!rows.length){ toast("Nothing to print"); return; }
+  printCostDoc("Raw Material Costing — OA-wise Summary", registerPrintHtml(rows));
+});
+$a("costPrintCur").addEventListener("click", ()=>{
+  const m = getActiveModel(), c = costOfModel(m), o = m.order;
+  const e = {oaNo:o.oaNo, customer:o.customer, shade:o.shade, batchNo:o.batchNo, machineName:m.machineName, snapshot:{order:o}, savedAt:new Date().toISOString()};
+  printCostDoc("Batch Raw Material Costing", costDetailHtml(e, c).replace(/<p class="small-note">[\s\S]*?<\/p>$/, ""));
+});
+$a("costExcel").addEventListener("click", ()=>{
+  if(!need("library.export")) return;
+  const rows = costRows(); if(!rows.length){ toast("Nothing to export"); return; }
+  const cur = getPrices().currency;
+  const oa = [["OA No","Customer","Shades","Batches","Tape (kg)","Tape ("+cur+")","Dyes ("+cur+")","Chemicals ("+cur+")","Water ("+cur+")","Total ("+cur+")","Cost per kg ("+cur+")"]]
+    .concat(oaSummary(rows).map(g=>[g.oa, g.customer, Array.from(g.shades).join(", "), g.batches, xlNum(g.tapeKg), xlNum(g.tape), xlNum(g.dye), xlNum(g.chem), xlNum(g.water), xlNum(g.total), g.tapeKg > 0 ? xlNum(g.total/g.tapeKg) : ""]));
+  const bt = [["Date","OA No","Customer","Shade","Batch","Machine","Calculator","Tape (kg)","Tape ("+cur+")","Dyes ("+cur+")","Chemicals ("+cur+")","Water ("+cur+")","Total ("+cur+")","Cost per kg ("+cur+")","Price basis","Items without price"]]
+    .concat(rows.map(r=>[dateDisplay(r.d), r.e.oaNo, r.e.customer, r.e.shade, r.e.batchNo, r.e.machineName, r.e.source === "lab" ? "Lab to Bulk" : "Machine-to-Machine", xlNum(r.c.tapeKg), xlNum(r.c.tot.tape), xlNum(r.c.tot.dye), xlNum(r.c.tot.chem), xlNum(r.c.tot.water), xlNum(r.c.tot.total), isFinite(r.c.perKg) ? xlNum(r.c.perKg) : "", r.frozen ? "Saved " + formatSavedAt(r.c.at) : "Current prices", r.c.missing.join("; ")]));
+  const ln = [["Date","OA No","Shade","Batch","Type","Item","Qty","Unit","Price ("+cur+")","Per","Amount ("+cur+")"]];
+  rows.forEach(r=>r.c.lines.forEach(l=>ln.push([dateDisplay(r.d), r.e.oaNo, r.e.shade, r.e.batchNo, l.type, l.name, xlNum(l.qty), l.unit, l.rate === null ? "" : xlNum(l.rate), l.rateUnit, xlNum(l.amount)])));
+  downloadBlob(buildXlsx([{name:"OA Summary", rows:oa, widths:[16,22,24,9,11,12,12,12,12,14,14]}, {name:"Batch Costing", rows:bt, widths:[12,14,20,16,12,12,18,10,12,12,12,12,14,14,26,40]}, {name:"Material Lines", rows:ln, widths:[12,14,16,12,10,40,10,6,12,8,14]}]),
+    "TexZippers_Costing_" + localISODate() + ".xlsx");
+});
+
+/* ============================================================
+   KPI BOARD — operator performance
+   • Operators (config "operators", synced): each operator owns machines.
+   • A saved recipe's machine → operator (frozen into the job when saved;
+     can be overridden in the Calculator).
+   • A batch (any job that is not "Addition N") is RFT — Right First Time —
+     when no Addition was needed for it. Additions are linked to their batch
+     (parentId when started from the Library; otherwise same OA + shade +
+     customer, latest batch saved before the addition).
+   • KPI Index = RFT % x RFT weight + Productivity x productivity weight
+     Productivity = operator's tape kg / highest operator's tape kg x 100
+   ============================================================ */
+const DEFAULT_KPI = {wRft:70, wProd:30, prodBasis:"batches", target:90, bands:{excellent:95, veryGood:90, good:80, average:70}, minBatches:1, weekStart:6};
+function getKpiCfg(){
+  const c = Object.assign(clone(DEFAULT_KPI), getConfig("kpiCfg", null) || {});
+  c.bands = Object.assign(clone(DEFAULT_KPI.bands), c.bands || {});
+  if(c.prodBasis !== "kg") c.prodBasis = "batches";
+  ["wRft","wProd","target","minBatches","weekStart"].forEach(k=>{ c[k] = isFinite(Number(c[k])) ? Number(c[k]) : DEFAULT_KPI[k]; });
+  return c;
+}
+function getOperators(){
+  const a = getConfig("operators", []);
+  return Array.isArray(a) ? a.filter(o=>o && typeof o.id === "string" && typeof o.name === "string").map(o=>Object.assign({code:"", machines:[], active:true}, o, {machines: Array.isArray(o.machines) ? o.machines.map(String) : []})) : [];
+}
+function operatorById(id){ return id ? getOperators().find(o=>o.id === id) || null : null; }
+function operatorForMachine(machine){
+  const k = normName(machine); if(!k) return null;
+  return getOperators().find(o=>o.active !== false && o.machines.some(m=>normName(m) === k)) || null;
+}
+function opName(o){ return o ? o.name + (o.code ? " (" + o.code + ")" : "") : ""; }
+/* operator of the job open in the calculator: manual choice, else the machine's owner */
+function calcOperator(src){
+  const S = src === "lab" ? state.lab : state.m2m;
+  const machine = src === "lab" ? S.machineName : S.m2Name;
+  if(S.operatorId){ const o = operatorById(S.operatorId); if(o) return {o, auto:false}; }
+  return {o: operatorForMachine(machine), auto:true};
+}
+function syncOperatorUI(){
+  ["lab","m2m"].forEach(src=>{
+    const sel = $a(src + "_operator"); if(!sel) return;
+    const S = src === "lab" ? state.lab : state.m2m, ops = getOperators();
+    const r = calcOperator(src);
+    const want = '<option value="">Auto — from machine' + (r.auto && r.o ? ": " + esc(opName(r.o)) : "") + '</option>' +
+      ops.filter(o=>o.active !== false || o.id === S.operatorId).map(o=>'<option value="' + esc(o.id) + '">' + esc(opName(o)) + '</option>').join("");
+    if(sel.dataset.html !== want){ sel.innerHTML = want; sel.dataset.html = want; }
+    if(document.activeElement !== sel) sel.value = S.operatorId && ops.some(o=>o.id === S.operatorId) ? S.operatorId : "";
+    const note = $a(src + "_opNote");
+    if(note) note.innerHTML = r.o ? "" : '<span class="miss-tag">No operator for this machine</span>' + (can("kpi.manage") ? ' — set in KPI Board' : "");
+  });
+}
+function initOperatorSelects(){
+  ["lab","m2m"].forEach(src=>{
+    const sel = $a(src + "_operator"); if(!sel) return;
+    sel.addEventListener("change", ()=>{ (src === "lab" ? state.lab : state.m2m).operatorId = sel.value; recalcAndRender(); });
+  });
+}
+/* what gets frozen into a saved job */
+function operatorStamp(src){ const r = calcOperator(src); return r.o ? {id:r.o.id, name:r.o.name, auto:r.auto} : null; }
+
+/* ---------- periods ---------- */
+function isoD(d){ return localISODate(d); }
+function kpiPeriodRange(p, from, to){
+  const now = new Date(), d0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const add = (d, n)=>{ const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const cfg = getKpiCfg();
+  if(p === "today") return {from:isoD(d0), to:isoD(d0), label:"Today"};
+  if(p === "yesterday"){ const y = add(d0, -1); return {from:isoD(y), to:isoD(y), label:"Yesterday"}; }
+  if(p === "week" || p === "lastweek"){
+    const back = (d0.getDay() - cfg.weekStart + 7) % 7; let s = add(d0, -back);
+    if(p === "lastweek") s = add(s, -7);
+    return {from:isoD(s), to:isoD(p === "week" ? d0 : add(s, 6)), label: p === "week" ? "This week" : "Last week"};
+  }
+  if(p === "month") return {from:isoD(new Date(d0.getFullYear(), d0.getMonth(), 1)), to:isoD(d0), label:"This month"};
+  if(p === "lastmonth"){ const s = new Date(d0.getFullYear(), d0.getMonth() - 1, 1), e = new Date(d0.getFullYear(), d0.getMonth(), 0); return {from:isoD(s), to:isoD(e), label:"Last month"}; }
+  if(p === "year") return {from:isoD(new Date(d0.getFullYear(), 0, 1)), to:isoD(d0), label:"This year"};
+  return {from: from || "0000-01-01", to: to || "9999-12-31", label: (from || to) ? "Custom: " + (from ? dateDisplay(from) : "start") + " – " + (to ? dateDisplay(to) : "today") : "All time"};
+}
+
+/* ---------- batches with RFT status ---------- */
+function batchTapeKg(e){ const s = e.snapshot || {}; return num(e.source === "lab" ? s.tapeQty : s.m2Tape); }
+function kpiKey(e){ return [normName(e.oaNo), normName(e.shade), normName(e.customer)].join("|"); }
+function kpiBatches(){
+  const lib = getLibrary();
+  const firsts = lib.filter(e=>additionNo(e.batchNo) === 0), adds = lib.filter(e=>additionNo(e.batchNo) > 0);
+  const byParent = new Map();
+  const byKey = new Map();
+  firsts.forEach(e=>{ const k = kpiKey(e); (byKey.get(k) || byKey.set(k, []).get(k)).push(e); });
+  adds.forEach(a=>{
+    let pid = a.snapshot && a.snapshot.parentId;
+    if(!pid || !Store.get("recipes", pid)){
+      const c = (byKey.get(kpiKey(a)) || []).filter(f=>String(f.savedAt) <= String(a.savedAt)).sort((x,y)=>String(y.savedAt).localeCompare(String(x.savedAt)));
+      pid = c.length ? c[0].id : null;
+    }
+    if(pid) (byParent.get(pid) || byParent.set(pid, []).get(pid)).push(a);
+  });
+  return firsts.map(e=>{
+    const o = (e.operator && e.operator.id && operatorById(e.operator.id)) || (e.operator && e.operator.id ? {id:e.operator.id, name:e.operator.name, code:"", gone:true} : operatorForMachine(e.machineName));
+    const additions = byParent.get(e.id) || [];
+    const auto = additions.length === 0;
+    const ov = e.kpi && typeof e.kpi.rft === "boolean" ? e.kpi.rft : null;
+    return {e, d: entryDate(e), op: o || null, opKey: o ? o.id : "_none", additions, rft: ov === null ? auto : ov, override: ov !== null, tapeKg: batchTapeKg(e)};
+  });
+}
+function addCostOf(a){ try{ return (a.cost && a.cost.tot) ? a.cost.tot.total : costOfModel(buildModelFromEntry(a)).tot.total; }catch(e){ return 0; } }
+function rating(idx, cfg){
+  const b = cfg.bands;
+  if(idx >= b.excellent) return ["Excellent", "r-ex"];
+  if(idx >= b.veryGood) return ["Very Good", "r-vg"];
+  if(idx >= b.good) return ["Good", "r-g"];
+  if(idx >= b.average) return ["Average", "r-av"];
+  return ["Needs Improvement", "r-ni"];
+}
+function kpiStats(range, opFilter){
+  const cfg = getKpiCfg();
+  const rows = kpiBatches().filter(b=>b.d >= range.from && b.d <= range.to && (!opFilter || b.opKey === opFilter));
+  const m = new Map();
+  rows.forEach(b=>{
+    const g = m.get(b.opKey) || {key:b.opKey, op:b.op, batches:0, rft:0, adds:0, addCost:0, kg:0, machines:new Set(), days:new Set(), rows:[]};
+    g.batches++; if(b.rft) g.rft++; g.adds += b.additions.length; g.kg += b.tapeKg;
+    if(b.e.machineName) g.machines.add(b.e.machineName); g.days.add(b.d); g.rows.push(b);
+    b.additions.forEach(a=>{ g.addCost += addCostOf(a); });
+    m.set(b.opKey, g);
+  });
+  const list = Array.from(m.values());
+  const pv = g => cfg.prodBasis === "kg" ? g.kg : g.batches;
+  const maxP = Math.max(0, ...list.filter(g=>g.key !== "_none").map(pv));
+  const wSum = (cfg.wRft + cfg.wProd) || 1;
+  list.forEach(g=>{
+    g.rftPct = g.batches ? g.rft / g.batches * 100 : 0;
+    g.prod = maxP > 0 ? pv(g) / maxP * 100 : (g.batches ? 100 : 0);
+    g.index = (g.rftPct * cfg.wRft + g.prod * cfg.wProd) / wSum;
+    g.enough = g.batches >= cfg.minBatches;
+    g.rate = g.key === "_none" ? ["—", ""] : (g.enough ? rating(g.index, cfg) : ["Low data", "r-ld"]);
+  });
+  list.sort((a,b)=>(a.key === "_none") - (b.key === "_none") || (b.enough - a.enough) || b.index - a.index || b.batches - a.batches);
+  let r = 0; list.forEach(g=>{ g.rank = (g.key !== "_none" && g.enough) ? ++r : null; });
+  const T = rows.reduce((t,b)=>{ t.batches++; if(b.rft) t.rft++; t.adds += b.additions.length; t.kg += b.tapeKg; return t; }, {batches:0, rft:0, adds:0, kg:0});
+  T.rftPct = T.batches ? T.rft / T.batches * 100 : 0;
+  return {cfg, rows, list, T};
+}
+
+/* ---------- render ---------- */
+let kpiPeriod = "month", kpiFrom = "", kpiTo = "", kpiOp = "";
+function kpiRange(){ return kpiPeriodRange(kpiPeriod, kpiFrom, kpiTo); }
+function pct(n){ return (isFinite(n) ? n : 0).toFixed(1) + " %"; }
+function renderKpi(){
+  if(currentViewId !== "view-kpi") return;
+  const range = kpiRange(), S = kpiStats(range, kpiOp), cfg = S.cfg;
+  const ops = getOperators();
+  const sel = $a("kpiOp"), want = '<option value="">All operators</option>' + ops.map(o=>'<option value="' + esc(o.id) + '">' + esc(opName(o)) + (o.active === false ? " (inactive)" : "") + '</option>').join("") + '<option value="_none">Unassigned machines</option>';
+  if(sel.dataset.html !== want){ sel.innerHTML = want; sel.dataset.html = want; }
+  sel.value = kpiOp;
+  $a("kpiCustom").hidden = kpiPeriod !== "custom";
+  $a("kpiRangeLbl").textContent = range.label + (kpiPeriod !== "custom" && kpiPeriod !== "all" ? " · " + dateDisplay(range.from) + (range.to !== range.from ? " – " + dateDisplay(range.to) : "") : "");
+  const best = S.list.find(g=>g.rank === 1);
+  const k = (l, v, cls) => `<div class="cost-kpi ${cls || ""}"><span>${l}</span><b>${v}</b></div>`;
+  $a("kpiCards").innerHTML = k("Batches", S.T.batches) + k("RFT batches", S.T.rft) + k("RFT %", pct(S.T.rftPct), S.T.batches && S.T.rftPct >= cfg.target ? "good" : (S.T.batches ? "bad" : "")) +
+    k("Additions", S.T.adds) + k("Tape dyed", fmt2(S.T.kg) + " kg") + k("Top operator", best ? esc(best.op.name) + " · " + best.index.toFixed(1) : "—", "main");
+  const cv = can("cost.view");
+  $a("kpiBody").innerHTML = S.list.map(g=>{
+    const name = '<button type="button" class="op-link" data-kpiop="' + esc(g.key) + '" title="Open profile">' + (g.key === "_none" ? '<i>Unassigned machines</i>' : esc(g.op.name) + (g.op.code ? ' <span class="small-note">' + esc(g.op.code) + '</span>' : "") + (g.op.gone ? ' <span class="chip">removed</span>' : "")) + ' &rsaquo;</button>';
+    return `<tr${g.key === "_none" ? ' class="kpi-none"' : ""}>
+      <td class="num"><b>${g.rank ? (g.rank <= 3 ? ["🥇","🥈","🥉"][g.rank-1] : g.rank) : "—"}</b></td>
+      <td>${name}</td><td class="kpi-mc">${esc(Array.from(g.machines).join(", "))}</td>
+      <td class="num">${g.batches}</td><td class="num">${g.rft}</td><td class="num">${g.batches - g.rft}</td>
+      <td class="num"><b class="${g.rftPct >= cfg.target ? "ok-txt" : "bad-txt"}">${pct(g.rftPct)}</b></td>
+      <td class="num">${g.adds}</td>${cv ? `<td class="num">${money(g.addCost)}</td>` : ""}<td class="num">${fmt2(g.kg)}</td>
+      <td>${g.key === "_none" ? "—" : `<div class="kpi-idx"><div class="kpi-bar"><i style="width:${Math.max(0, Math.min(100, g.index)).toFixed(1)}%"></i></div><b>${g.index.toFixed(1)}</b></div>`}</td>
+      <td><span class="rate ${g.rate[1]}">${esc(g.rate[0])}</span></td></tr>`;
+  }).join("") || `<tr><td colspan="${cv ? 12 : 11}" class="empty-state">No batches in this period. Batches appear here when recipes are saved from the Calculator.</td></tr>`;
+  $a("kpiAddCostTh").hidden = !cv;
+  renderOperators();
+  renderKpiSettings();
+}
+
+/* ---------- operator profile ---------- */
+function trendHtml(rows, range){
+  if(!rows.length) return "";
+  const days = new Map();
+  rows.forEach(b=>{ const g = days.get(b.d) || {n:0, r:0}; g.n++; if(b.rft) g.r++; days.set(b.d, g); });
+  const keys = Array.from(days.keys()).sort().slice(-31);
+  const max = Math.max(...keys.map(k=>days.get(k).n));
+  return '<div class="kpi-trend">' + keys.map(k=>{ const g = days.get(k); return `<div class="kt-col" title="${esc(dateDisplay(k))}: ${g.n} batch(es), ${g.r} RFT"><div class="kt-bar" style="height:${(g.n/max*100).toFixed(0)}%"><i style="height:${(g.r/g.n*100).toFixed(0)}%"></i></div><span>${esc(k.slice(8,10))}</span></div>`; }).join("") + '</div><p class="small-note"><span class="kt-key ok"></span> RFT &nbsp; <span class="kt-key bad"></span> needed addition · last ' + keys.length + ' working day(s)</p>';
+}
+function profileHtml(g, range, cfg, editable){
+  const nm = g.key === "_none" ? "Unassigned machines" : opName(g.op);
+  const rows = g.rows.slice().sort((a,b)=>b.d.localeCompare(a.d));
+  return `<div class="cost-detail-meta">Operator: <b>${esc(nm)}</b> · Period: <b>${esc(range.label)}</b>${range.from !== "0000-01-01" ? " (" + esc(dateDisplay(range.from)) + " – " + esc(dateDisplay(range.to)) + ")" : ""} · Machines: <b>${esc(Array.from(g.machines).join(", ") || "—")}</b></div>
+    <div class="cost-kpis">
+      <div class="cost-kpi"><span>Batches</span><b>${g.batches}</b></div><div class="cost-kpi"><span>RFT</span><b>${g.rft}</b></div>
+      <div class="cost-kpi ${g.rftPct >= cfg.target ? "good" : "bad"}"><span>RFT %</span><b>${pct(g.rftPct)}</b></div><div class="cost-kpi"><span>Additions</span><b>${g.adds}</b></div>
+      <div class="cost-kpi"><span>Tape dyed</span><b>${fmt2(g.kg)} kg</b></div><div class="cost-kpi main"><span>KPI Index · ${esc(g.rate[0])}</span><b>${g.key === "_none" ? "—" : g.index.toFixed(1)}</b></div>
+    </div>
+    ${trendHtml(g.rows, range)}
+    <table class="cost-table kpi-batches"><thead><tr><th>Date</th><th>OA No</th><th>Customer</th><th>Shade</th><th>Batch</th><th>Machine</th><th class="num">Tape kg</th><th class="num">Additions</th><th>Result</th></tr></thead><tbody>
+    ${rows.map(b=>`<tr><td>${esc(dateDisplay(b.d))}</td><td>${esc(b.e.oaNo)}</td><td>${esc(b.e.customer)}</td><td>${esc(b.e.shade)}</td><td>${esc(b.e.batchNo)}</td><td>${esc(b.e.machineName)}</td><td class="num">${fmt2(b.tapeKg)}</td><td class="num">${b.additions.length ? b.additions.map(a=>esc(a.batchNo)).join(", ") : "—"}</td>
+      <td>${editable ? `<select class="kpi-ov" data-id="${esc(b.e.id)}"><option value=""${b.override ? "" : " selected"}>Auto: ${b.additions.length ? "Not RFT" : "RFT"}</option><option value="1"${b.override && b.rft ? " selected" : ""}>RFT (manual)</option><option value="0"${b.override && !b.rft ? " selected" : ""}>Not RFT (manual)</option></select>` : `<span class="rate ${b.rft ? "r-ex" : "r-ni"}">${b.rft ? "RFT" : "Not RFT"}</span>${b.override ? ' <span class="small-note">manual</span>' : ""}`}</td></tr>`).join("") || '<tr><td colspan="9" class="empty-state">No batches</td></tr>'}
+    </tbody></table>`;
+}
+function showOperatorProfile(key){
+  const range = kpiRange(), S = kpiStats(range, key), g = S.list.find(x=>x.key === key);
+  if(!g){ toast("No batches for this operator in the period"); return; }
+  const back = document.createElement("div"); back.className = "modal-back no-print";
+  back.innerHTML = '<div class="modal cost-modal" role="dialog" aria-modal="true"><div class="modal-top"></div><h3>Operator profile</h3><div class="cost-modal-body"></div><div class="modal-actions"><button type="button" class="btn secondary" data-x="print">Print</button><button type="button" class="btn" data-x="close">Close</button></div></div>';
+  const body = back.querySelector(".cost-modal-body");
+  const draw = ()=>{ const s2 = kpiStats(range, key), g2 = s2.list.find(x=>x.key === key) || g; body.innerHTML = profileHtml(g2, range, s2.cfg, can("kpi.manage")); };
+  draw();
+  body.addEventListener("change", e=>{
+    const t = e.target; if(!t.classList.contains("kpi-ov") || !need("kpi.manage")) return;
+    const rec = Store.get("recipes", t.dataset.id); if(!rec) return;
+    const c = clone(rec);
+    if(t.value === "") delete c.kpi; else c.kpi = {rft: t.value === "1", by: (currentUser() || {}).username || "", at: new Date().toISOString()};
+    Store.put("recipes", c);
+    audit("kpi.override", [rec.oaNo, rec.shade, rec.batchNo].filter(Boolean).join(" · ") + " → " + (t.value === "" ? "Auto" : t.value === "1" ? "RFT" : "Not RFT"));
+    draw(); renderKpi();
+  });
+  const close = ()=>{ document.removeEventListener("keydown", key2, true); back.remove(); };
+  const key2 = ev=>{ if(ev.key === "Escape"){ ev.preventDefault(); close(); } };
+  back.addEventListener("mousedown", ev=>{ if(ev.target === back) close(); });
+  back.querySelector('[data-x="close"]').addEventListener("click", close);
+  back.querySelector('[data-x="print"]').addEventListener("click", ()=>{ const s3 = kpiStats(range, key), g3 = s3.list.find(x=>x.key === key) || g; printCostDoc("Operator KPI Profile", profileHtml(g3, range, s3.cfg, false)); });
+  document.addEventListener("keydown", key2, true);
+  document.body.appendChild(back);
+}
+
+/* ---------- operators setup ---------- */
+let opEditId = null;
+function machineNames(){ return (LISTS.machines || []).map(m=>m.name).filter(n=>n && normName(n) !== "machine name"); }
+function renderOperators(){
+  if(!$a("opBody")) return;
+  const ops = getOperators(), ed = can("kpi.manage");
+  const mine = new Map(); ops.forEach(o=>{ if(o.active !== false) o.machines.forEach(m=>mine.set(normName(m), o)); });
+  const un = machineNames().filter(m=>!mine.has(normName(m)));
+  $a("opUnassigned").innerHTML = un.length ? '<span class="miss-tag">' + un.length + ' machine(s) without operator:</span> ' + un.map(esc).join(", ") : '<span class="chip ok-chip">Every machine has an operator</span>';
+  $a("opBody").innerHTML = ops.map(o=>`<tr${o.active === false ? ' style="opacity:.55"' : ""}><td><b>${esc(o.name)}</b></td><td>${esc(o.code)}</td><td class="kpi-mc">${o.machines.map(m=>'<span class="mc-chip">' + esc(m) + '</span>').join(" ") || "—"}</td><td>${o.active === false ? '<span class="chip lab">Inactive</span>' : '<span class="chip ok-chip">Active</span>'}</td>
+    <td>${ed ? `<div class="lib-actions-cell"><button type="button" class="btn secondary btn-sm" data-opedit="${esc(o.id)}">Edit</button><button type="button" class="btn secondary btn-sm" data-optoggle="${esc(o.id)}">${o.active === false ? "Activate" : "Deactivate"}</button></div>` : ""}</td></tr>`).join("") ||
+    '<tr><td colspan="5" class="empty-state">No operators yet — add one and tick the machines they run.</td></tr>';
+}
+function openOpForm(id){
+  if(!need("kpi.manage")) return;
+  opEditId = id || null;
+  const o = id ? operatorById(id) : null, ops = getOperators();
+  $a("opFormTitle").textContent = o ? "Edit operator — " + o.name : "Add operator";
+  $a("opName").value = o ? o.name : ""; $a("opCode").value = o ? o.code : "";
+  const owner = new Map(); ops.forEach(x=>{ if(x.active !== false && x.id !== opEditId) x.machines.forEach(m=>owner.set(normName(m), x.name)); });
+  const has = new Set((o ? o.machines : []).map(normName));
+  $a("opMachines").innerHTML = machineNames().map(m=>{
+    const k = normName(m), ow = owner.get(k);
+    return `<label class="mc-pick${ow ? " taken" : ""}"><input type="checkbox" value="${esc(m)}"${has.has(k) ? " checked" : ""}> ${esc(m)}${ow ? ' <small>(' + esc(ow) + ')</small>' : ""}</label>`;
+  }).join("") || '<p class="small-note">No machines in Settings &rarr; Suggestion Lists.</p>';
+  $a("opMsg").textContent = ""; $a("opForm").hidden = false; $a("opName").focus();
+}
+$a("opAdd").addEventListener("click", ()=>openOpForm(null));
+$a("opCancel").addEventListener("click", ()=>{ $a("opForm").hidden = true; opEditId = null; });
+$a("opSave").addEventListener("click", async ()=>{
+  if(!need("kpi.manage")) return;
+  const name = $a("opName").value.trim().replace(/\s+/g, " "), code = $a("opCode").value.trim();
+  const msg = $a("opMsg");
+  if(!name){ msg.textContent = "Enter the operator's name."; return; }
+  let ops = getOperators();
+  if(ops.some(o=>o.id !== opEditId && normName(o.name) === normName(name) && normName(o.code) === normName(code))){ msg.textContent = "An operator with this name/code already exists."; return; }
+  const machines = Array.from(document.querySelectorAll("#opMachines input:checked")).map(i=>i.value);
+  const moved = [];
+  ops.forEach(o=>{ if(o.id === opEditId || o.active === false) return; const before = o.machines.length; o.machines = o.machines.filter(m=>!machines.some(x=>normName(x) === normName(m))); if(o.machines.length !== before) moved.push(o.name); });
+  if(moved.length && !(await uiConfirm({title:"Move machines?", message:"Some ticked machines belong to " + moved.join(", ") + ". They will be moved to " + name + ". Batches already saved keep their old operator.", ok:"Move & save"}))) return;
+  if(opEditId) ops = ops.map(o=>o.id === opEditId ? Object.assign(o, {name, code, machines}) : o);
+  else ops.push({id:newId("op"), name, code, machines, active:true});
+  setConfig("operators", ops);
+  audit("kpi.operator", (opEditId ? "Updated " : "Added ") + name + " · " + machines.length + " machine(s)");
+  $a("opForm").hidden = true; opEditId = null;
+  renderKpi(); syncOperatorUI(); toast("Operator saved");
+});
+$a("opBody").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.opedit) return openOpForm(b.dataset.opedit);
+  if(b.dataset.optoggle){
+    if(!need("kpi.manage")) return;
+    const ops = getOperators().map(o=>o.id === b.dataset.optoggle ? Object.assign(o, {active: o.active === false}) : o);
+    setConfig("operators", ops); const o = ops.find(x=>x.id === b.dataset.optoggle);
+    audit("kpi.operator", (o.active ? "Activated " : "Deactivated ") + o.name);
+    renderKpi(); syncOperatorUI();
+  }
+});
+
+/* ---------- KPI settings ---------- */
+function renderKpiSettings(){
+  if(!$a("kpiWRft")) return;
+  const f = document.activeElement; if(f && f.closest && f.closest("#kpiSettings")) return;
+  const c = getKpiCfg(), ed = can("kpi.manage");
+  $a("kpiBasis").value = c.prodBasis; $a("kpiWRft").value = c.wRft; $a("kpiWProd").value = c.wProd; $a("kpiTarget").value = c.target; $a("kpiMin").value = c.minBatches; $a("kpiWeek").value = String(c.weekStart);
+  $a("kpiBEx").value = c.bands.excellent; $a("kpiBVg").value = c.bands.veryGood; $a("kpiBG").value = c.bands.good; $a("kpiBAv").value = c.bands.average;
+  document.querySelectorAll("#kpiSettings input, #kpiSettings select, #kpiSettings button").forEach(x=>{ x.disabled = !ed; });
+}
+$a("kpiCfgSave").addEventListener("click", ()=>{
+  if(!need("kpi.manage")) return;
+  const n = id=>Number(String($a(id).value).replace(",", "."));
+  const c = {prodBasis: $a("kpiBasis").value === "kg" ? "kg" : "batches", wRft:n("kpiWRft"), wProd:n("kpiWProd"), target:n("kpiTarget"), minBatches:Math.max(1, Math.round(n("kpiMin"))), weekStart:Number($a("kpiWeek").value),
+    bands:{excellent:n("kpiBEx"), veryGood:n("kpiBVg"), good:n("kpiBG"), average:n("kpiBAv")}};
+  const all = [c.wRft, c.wProd, c.target, c.bands.excellent, c.bands.veryGood, c.bands.good, c.bands.average];
+  if(all.some(v=>!isFinite(v) || v < 0 || v > 100) || c.wRft + c.wProd <= 0){ $a("kpiCfgMsg").textContent = "Use numbers from 0 to 100 (weights can't both be 0)."; return; }
+  if(!(c.bands.excellent >= c.bands.veryGood && c.bands.veryGood >= c.bands.good && c.bands.good >= c.bands.average)){ $a("kpiCfgMsg").textContent = "Rating limits must go down: Excellent ≥ Very Good ≥ Good ≥ Average."; return; }
+  setConfig("kpiCfg", c); audit("kpi.settings", "RFT " + c.wRft + "% / productivity " + c.wProd + "%, target " + c.target + "%");
+  $a("kpiCfgMsg").textContent = "Saved."; document.activeElement.blur(); renderKpi();
+});
+$a("kpiCfgReset").addEventListener("click", ()=>{ if(!need("kpi.manage")) return; setConfig("kpiCfg", clone(DEFAULT_KPI)); document.activeElement.blur(); renderKpi(); });
+
+/* ---------- filters, profile, export, print ---------- */
+$a("kpiPeriod").addEventListener("change", e=>{ kpiPeriod = e.target.value; renderKpi(); });
+$a("kpiFrom").addEventListener("change", e=>{ kpiFrom = e.target.value; renderKpi(); });
+$a("kpiTo").addEventListener("change", e=>{ kpiTo = e.target.value; renderKpi(); });
+$a("kpiOp").addEventListener("change", e=>{ kpiOp = e.target.value; renderKpi(); });
+$a("kpiBody").addEventListener("click", e=>{ const b = e.target.closest("[data-kpiop]"); if(b) showOperatorProfile(b.dataset.kpiop); });
+function boardPrintHtml(S, range){
+  const cv = can("cost.view");
+  return `<p class="small-note">Period: ${esc(range.label)}${range.from !== "0000-01-01" ? " (" + esc(dateDisplay(range.from)) + " – " + esc(dateDisplay(range.to)) + ")" : ""} · KPI Index = RFT % × ${S.cfg.wRft}% + Productivity (${S.cfg.prodBasis === "kg" ? "tape kg" : "batches"}) × ${S.cfg.wProd}% · RFT target ${S.cfg.target} %</p>
+    <div class="cost-kpis"><div class="cost-kpi"><span>Batches</span><b>${S.T.batches}</b></div><div class="cost-kpi"><span>RFT</span><b>${S.T.rft}</b></div><div class="cost-kpi"><span>RFT %</span><b>${pct(S.T.rftPct)}</b></div><div class="cost-kpi"><span>Additions</span><b>${S.T.adds}</b></div><div class="cost-kpi"><span>Tape dyed</span><b>${fmt2(S.T.kg)} kg</b></div></div>
+    <table><thead><tr><th>Rank</th><th>Operator</th><th>Machines</th><th class="num">Batches</th><th class="num">RFT</th><th class="num">Not RFT</th><th class="num">RFT %</th><th class="num">Additions</th>${cv ? '<th class="num">Addition cost</th>' : ""}<th class="num">Tape kg</th><th class="num">KPI Index</th><th>Rating</th></tr></thead><tbody>
+    ${S.list.map(g=>`<tr><td>${g.rank || "—"}</td><td>${g.key === "_none" ? "Unassigned machines" : esc(opName(g.op))}</td><td>${esc(Array.from(g.machines).join(", "))}</td><td class="num">${g.batches}</td><td class="num">${g.rft}</td><td class="num">${g.batches - g.rft}</td><td class="num">${pct(g.rftPct)}</td><td class="num">${g.adds}</td>${cv ? `<td class="num">${money(g.addCost)}</td>` : ""}<td class="num">${fmt2(g.kg)}</td><td class="num">${g.key === "_none" ? "—" : g.index.toFixed(1)}</td><td>${esc(g.rate[0])}</td></tr>`).join("")}
+    </tbody></table>`;
+}
+$a("kpiPrint").addEventListener("click", ()=>{ const r = kpiRange(), S = kpiStats(r, kpiOp); if(!S.rows.length){ toast("No batches in this period"); return; } printCostDoc("Operator KPI Board", boardPrintHtml(S, r)); });
+$a("kpiExcel").addEventListener("click", ()=>{
+  if(!need("library.export")) return;
+  const r = kpiRange(), S = kpiStats(r, kpiOp); if(!S.rows.length){ toast("No batches in this period"); return; }
+  const cv = can("cost.view");
+  const board = [["Rank","Operator","Code","Machines","Batches","RFT","Not RFT","RFT %","Additions"].concat(cv ? ["Addition cost"] : []).concat(["Tape kg","Productivity %","KPI Index","Rating"])]
+    .concat(S.list.map(g=>[g.rank || "", g.key === "_none" ? "Unassigned machines" : g.op.name, g.op ? g.op.code || "" : "", Array.from(g.machines).join(", "), g.batches, g.rft, g.batches - g.rft, xlNum(g.rftPct), g.adds].concat(cv ? [xlNum(g.addCost)] : []).concat([xlNum(g.kg), xlNum(g.prod), g.key === "_none" ? "" : xlNum(g.index), g.rate[0]])));
+  const bt = [["Date","Operator","Machine","OA No","Customer","Shade","Batch","Tape kg","Additions","Result","Manual"]]
+    .concat(S.rows.slice().sort((a,b)=>a.d.localeCompare(b.d)).map(b=>[dateDisplay(b.d), b.op ? b.op.name : "Unassigned", b.e.machineName, b.e.oaNo, b.e.customer, b.e.shade, b.e.batchNo, xlNum(b.tapeKg), b.additions.map(a=>a.batchNo).join(", "), b.rft ? "RFT" : "Not RFT", b.override ? "Yes" : ""]));
+  downloadBlob(buildXlsx([{name:"KPI Board", rows:board, widths:[6,22,10,30,9,8,9,9,10,12,10,13,11,18]}, {name:"Batches", rows:bt, widths:[12,20,12,14,20,16,12,9,18,10,8]}]), "TexZippers_KPI_" + r.from.replace(/^0000.*/, "all") + "_" + localISODate() + ".xlsx");
+});
+
+/* ============================================================
+   REPORTS — production, materials, shades, machines, quality
+   Data = saved Library jobs. A "batch" = a job that is not an
+   Addition; additions count as extra jobs (and their dye/chemical
+   is real consumption). Tape & water are counted once per batch.
+   ============================================================ */
+const RPT_C = {a:"var(--viz-1,#2a78d6)", b:"var(--viz-2,#eb6834)"};   // RFT / Not RFT — CVD-validated pair
+let rptPeriod = "month", rptFrom = "", rptTo = "", rptGroup = "auto", rptCust = "", rptMc = "", rptOp = "", rptSrc = "", rptTab = "overview";
+const _rptModel = new Map();
+function rptModel(e){
+  const c = _rptModel.get(e.id);
+  if(c && c.u === e.updatedAt) return c.m;
+  let m = null; try{ m = buildModelFromEntry(e); }catch(err){ m = null; }
+  _rptModel.set(e.id, {u:e.updatedAt, m});
+  return m;
+}
+function rptRange(){ return kpiPeriodRange(rptPeriod, rptFrom, rptTo); }
+function capKgOf(e){
+  const s = e.snapshot || {};
+  const lbl = String(e.source === "lab" ? s.capLabel : s.m2CapLabel || "");
+  let m = lbl.match(/(\d+(?:\.\d+)?)/); if(m) return Number(m[1]);
+  m = String(e.machineName || "").match(/(\d+(?:\.\d+)?)\s*kg/i); return m ? Number(m[1]) : 0;
+}
+function rptJobs(){
+  const r = rptRange(), mcK = normName(rptMc), cuK = normName(rptCust);
+  const batches = kpiBatches();
+  const batchOf = new Map(); batches.forEach(b=>{ batchOf.set(b.e.id, b); b.additions.forEach(a=>batchOf.set(a.id, b)); });
+  return getLibrary().map(e=>{
+    const d = entryDate(e);
+    if(d < r.from || d > r.to) return null;
+    if(rptSrc && e.source !== rptSrc) return null;
+    if(mcK && normName(e.machineName) !== mcK) return null;
+    if(cuK && normName(e.customer) !== cuK) return null;
+    const b = batchOf.get(e.id) || null, isAdd = additionNo(e.batchNo) > 0;
+    const op = b ? b.op : ((e.operator && operatorById(e.operator.id)) || operatorForMachine(e.machineName));
+    if(rptOp && (op ? op.id : "_none") !== rptOp) return null;
+    return {e, d, isAdd, b, op};
+  }).filter(Boolean);
+}
+function rptGroupOf(range, dates){
+  if(rptGroup !== "auto") return rptGroup;
+  let a = range.from, z = range.to;
+  if(a < "1900" || z > "9000"){ const s = dates.slice().sort(); a = s[0] || localISODate(); z = s[s.length-1] || a; }
+  const days = (Date.parse(z) - Date.parse(a)) / 864e5;
+  return days <= 31 ? "day" : days <= 120 ? "week" : days <= 900 ? "month" : "year";
+}
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function periodKey(d, g){
+  if(g === "year") return d.slice(0,4);
+  if(g === "month") return d.slice(0,7);
+  if(g === "week"){ const t = new Date(d + "T00:00:00"); const back = (t.getDay() - getKpiCfg().weekStart + 7) % 7; t.setDate(t.getDate() - back); return localISODate(t); }
+  return d;
+}
+function periodLabel(k, g){
+  if(g === "year") return k;
+  if(g === "month") return MON[+k.slice(5,7)-1] + "-" + k.slice(0,4);
+  if(g === "week") return "Wk " + k.slice(8,10) + "-" + MON[+k.slice(5,7)-1];
+  return k.slice(8,10) + "-" + MON[+k.slice(5,7)-1];
+}
+function periodKeys(range, g, dates){
+  let a = range.from, z = range.to;
+  const s = dates.slice().sort();
+  if(a < "1900") a = s[0] || localISODate();
+  if(z > "9000" || z > localISODate()) z = localISODate() > (s[s.length-1] || "") ? localISODate() : s[s.length-1];
+  if(!a || !z || a > z) return Array.from(new Set(dates.map(d=>periodKey(d, g)))).sort();
+  const out = []; const t = new Date(a + "T00:00:00"), end = new Date(z + "T00:00:00");
+  let guard = 0;
+  while(t <= end && guard++ < 1200){
+    const k = periodKey(localISODate(t), g); if(!out.includes(k)) out.push(k);
+    if(g === "day") t.setDate(t.getDate() + 1); else if(g === "week") t.setDate(t.getDate() + 7);
+    else if(g === "month"){ t.setDate(1); t.setMonth(t.getMonth() + 1); } else { t.setMonth(0, 1); t.setFullYear(t.getFullYear() + 1); }
+  }
+  const last = periodKey(z, g); if(!out.includes(last)) out.push(last);
+  return out;
+}
+
+/* ---------- the numbers ---------- */
+function rptCompute(){
+  const range = rptRange(), jobs = rptJobs(), cv = can("cost.view"), P = cv ? getPrices() : null;
+  const g = rptGroupOf(range, jobs.map(j=>j.d));
+  const T = {batches:0, rft:0, adds:0, jobs:jobs.length, tape:0, dye:0, chem:0, water:0, cost:0};
+  const trend = new Map(), dyes = new Map(), chems = new Map(), tapes = new Map(), shades = new Map(), mcs = new Map(), bno = new Map(), custs = new Map(), srcs = new Map(), ops = new Map();
+  const bump = (map, key, label, init)=>{ if(!map.has(key)) map.set(key, Object.assign({key, label}, init())); return map.get(key); };
+  const Q = ()=>({batches:0, rft:0, adds:0, kg:0, cost:0, jobs:0, names:new Set()});
+  jobs.forEach(j=>{
+    const e = j.e, m = rptModel(e); if(!m) return;
+    const tk = periodKey(j.d, g), tr = bump(trend, tk, periodLabel(tk, g), ()=>({batches:0, rft:0, adds:0, tape:0, dye:0, chem:0, water:0, cost:0}));
+    const div = 1000;   // recipe dye/chemical qty is in grams
+    let jc = 0;
+    if(cv){ jc = (e.cost && e.cost.tot) ? e.cost.tot.total : costOfModel(m, P).tot.total; T.cost += jc; tr.cost += jc; }
+    (m.dyes || []).forEach(d=>{ const q = Number(d.final); if(!(q > 0)) return; const kg = q / div; T.dye += kg; tr.dye += kg;
+      const x = bump(dyes, normName(d.name) || "(no name)", d.name || "(no name)", ()=>({kg:0, jobs:0, cost:0})); x.kg += kg; x.jobs++;
+      if(cv){ const r = priceOf(P.dye, d.name); if(isPrice(r)) x.cost += kg * r; } });
+    (m.chems || []).forEach(c=>{ const q = Number(c.final); if(!(q > 0)) return; const kg = q / div; T.chem += kg; tr.chem += kg;
+      const x = bump(chems, normName(c.name) || "(no name)", c.name || "(no name)", ()=>({kg:0, jobs:0, cost:0})); x.kg += kg; x.jobs++;
+      if(cv){ const r = priceOf(P.chem, c.name); if(isPrice(r)) x.cost += kg * r; } });
+    if(j.isAdd){ T.adds++; tr.adds++; return; }
+    const kg = num(m.tapeQty), L = num(m.liquorCap), rft = j.b ? j.b.rft : true, nAdd = j.b ? j.b.additions.length : 0;
+    T.batches++; if(rft) T.rft++; T.tape += kg; T.water += L;
+    tr.batches++; if(rft) tr.rft++; tr.tape += kg; tr.water += L;
+    const add = (map, key, label)=>{ const x = bump(map, key, label, Q); x.batches++; if(rft) x.rft++; x.adds += nAdd; x.kg += kg; x.cost += jc; return x; };
+    const sh = add(shades, normName(e.shade) || "(no shade)", e.shade || "(no shade)"); if(e.customer) sh.names.add(e.customer);
+    const mc = add(mcs, normName(e.machineName) || "(no machine)", e.machineName || "(no machine)"); mc.cap = Math.max(mc.cap || 0, capKgOf(e)); mc.load = (mc.load || 0) + (capKgOf(e) > 0 ? kg / capKgOf(e) * 100 : 0); mc.loadN = (mc.loadN || 0) + (capKgOf(e) > 0 ? 1 : 0);
+    if(j.op) mc.names.add(j.op.name);
+    const bl = String(e.batchNo || "").trim() || "(blank)"; add(bno, normName(bl), bl);
+    const tt = String((m.order && m.order.matType) || "").trim() || "(no tape type)"; const t2 = add(tapes, normName(tt), tt);
+    const cu = add(custs, normName(e.customer) || "(no customer)", e.customer || "(no customer)"); cu.names.add(e.oaNo || "");
+    add(srcs, e.source, e.source === "lab" ? "Lab to Bulk" : "Machine-to-Machine");
+    add(ops, j.op ? j.op.id : "_none", j.op ? j.op.name : "Unassigned");
+  });
+  T.rftPct = T.batches ? T.rft / T.batches * 100 : 0;
+  const keys = periodKeys(range, g, jobs.map(j=>j.d));
+  const trendRows = keys.map(k=>trend.get(k) || {key:k, label:periodLabel(k, g), batches:0, rft:0, adds:0, tape:0, dye:0, chem:0, water:0, cost:0});
+  const fin = map => Array.from(map.values()).map(x=>Object.assign(x, {rftPct: x.batches ? x.rft / x.batches * 100 : 0, addRate: x.batches ? x.adds / x.batches * 100 : 0}));
+  return {range, g, T, cv, trend:trendRows, dyes:fin(dyes).sort((a,b)=>b.kg-a.kg), chems:fin(chems).sort((a,b)=>b.kg-a.kg), tapes:fin(tapes).sort((a,b)=>b.kg-a.kg),
+    shades:fin(shades), mcs:fin(mcs).map(x=>Object.assign(x, {loadPct: x.loadN ? x.load / x.loadN : NaN})), bno:fin(bno).sort((a,b)=>b.batches-a.batches),
+    custs:fin(custs).sort((a,b)=>b.batches-a.batches), srcs:fin(srcs), ops:fin(ops).sort((a,b)=>b.rftPct-a.rftPct || b.batches-a.batches)};
+}
+
+/* ---------- SVG charts (thin marks, recessive grid, hover tooltip via data-tip) ---------- */
+function niceMax(v){ if(!(v > 0)) return 1; const p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * p; }
+function svgEsc(s){ return esc(String(s)); }
+function chartStack(rows, title){
+  if(!rows.length || !rows.some(r=>r.batches)) return '<div class="viz-empty">No batches in this period</div>';
+  const W = 760, H = 240, L = 36, R = 8, Tp = 10, B = 34, iw = W - L - R, ih = H - Tp - B;
+  const max = niceMax(Math.max(...rows.map(r=>r.batches))), n = rows.length, bw = Math.max(2, Math.min(34, iw / n - 3));
+  const y = v => Tp + ih - v / max * ih;
+  let g = "";
+  for(let i = 0; i <= 4; i++){ const v = max * i / 4, yy = y(v); g += `<line x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}" class="vz-grid"/><text x="${L-6}" y="${yy+3}" class="vz-ax" text-anchor="end">${Number.isInteger(v) ? v : v.toFixed(1)}</text>`; }
+  const step = Math.ceil(n / 14);
+  rows.forEach((r, i)=>{
+    const cx = L + (i + .5) * iw / n, x = cx - bw / 2, h1 = r.rft / max * ih, h2 = (r.batches - r.rft) / max * ih, rad = Math.min(3, bw / 2);
+    const tip = `${r.label}: ${r.batches} batch(es) · ${r.rft} RFT · ${r.batches - r.rft} not RFT · ${r.batches ? (r.rft / r.batches * 100).toFixed(1) : 0}% RFT`;
+    if(h1 > 0) g += `<rect x="${x}" y="${Tp + ih - h1}" width="${bw}" height="${h1}" rx="${h2 > 0 ? 0 : rad}" fill="${RPT_C.a}"/>`;
+    if(h2 > 0) g += `<rect x="${x}" y="${Tp + ih - h1 - h2 - (h1 > 0 ? 2 : 0)}" width="${bw}" height="${Math.max(1, h2 - (h1 > 0 ? 0 : 0))}" rx="${rad}" fill="${RPT_C.b}"/>`;
+    g += `<rect x="${cx - iw / n / 2}" y="${Tp}" width="${iw / n}" height="${ih}" fill="transparent" data-tip="${svgEsc(tip)}"/>`;
+    if(i % step === 0) g += `<text x="${cx}" y="${H - B + 14}" class="vz-ax" text-anchor="middle">${svgEsc(r.label)}</text>`;
+  });
+  g += `<line x1="${L}" x2="${W-R}" y1="${Tp+ih}" y2="${Tp+ih}" class="vz-base"/>`;
+  return `<figure class="viz"><figcaption>${esc(title)}<span class="vz-legend"><i style="background:${RPT_C.a}"></i>RFT <i style="background:${RPT_C.b}"></i>Not RFT (needed addition)</span></figcaption><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${svgEsc(title)}">${g}</svg></figure>`;
+}
+function chartLine(rows, title, target){
+  const pts = rows.map((r,i)=>({i, v: r.batches ? r.rft / r.batches * 100 : null, r}));
+  if(!pts.some(p=>p.v !== null)) return "";
+  const W = 760, H = 180, L = 36, R = 8, Tp = 10, B = 30, iw = W - L - R, ih = H - Tp - B, n = rows.length;
+  const x = i => L + (i + .5) * iw / n, y = v => Tp + ih - v / 100 * ih;
+  let g = "";
+  [0,25,50,75,100].forEach(v=>{ g += `<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" class="vz-grid"/><text x="${L-6}" y="${y(v)+3}" class="vz-ax" text-anchor="end">${v}%</text>`; });
+  if(isFinite(target)) g += `<line x1="${L}" x2="${W-R}" y1="${y(target)}" y2="${y(target)}" class="vz-target"/><text x="${W-R}" y="${y(target)-4}" class="vz-ax" text-anchor="end">target ${target}%</text>`;
+  let path = "", seg = false;
+  pts.forEach(p=>{ if(p.v === null){ seg = false; return; } path += (seg ? "L" : "M") + x(p.i).toFixed(1) + " " + y(p.v).toFixed(1) + " "; seg = true; });
+  g += `<path d="${path}" fill="none" stroke="${RPT_C.a}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  const step = Math.ceil(n / 14);
+  pts.forEach(p=>{
+    if(p.v !== null) g += `<circle cx="${x(p.i)}" cy="${y(p.v)}" r="4" fill="${RPT_C.a}" class="vz-dot"/>`;
+    g += `<rect x="${x(p.i) - iw / n / 2}" y="${Tp}" width="${iw / n}" height="${ih}" fill="transparent" data-tip="${svgEsc(p.r.label + ": " + (p.v === null ? "no batches" : p.v.toFixed(1) + "% RFT (" + p.r.rft + " of " + p.r.batches + ")"))}"/>`;
+    if(p.i % step === 0) g += `<text x="${x(p.i)}" y="${H - B + 14}" class="vz-ax" text-anchor="middle">${svgEsc(p.r.label)}</text>`;
+  });
+  return `<figure class="viz"><figcaption>${esc(title)}</figcaption><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${svgEsc(title)}">${g}</svg></figure>`;
+}
+function chartHBar(items, title, valFn, fmtFn, tipFn, opts){
+  opts = opts || {};
+  items = items.slice(0, opts.top || 10);
+  if(!items.length) return '<div class="viz-empty">No data</div>';
+  const W = opts.half ? 440 : 760, rowH = opts.half ? 22 : 24, L = opts.half ? 118 : 190, R = opts.half ? 78 : 70, H = items.length * rowH + 8, iw = W - L - R, cut = opts.half ? 17 : 28;
+  const max = opts.max || Math.max(...items.map(valFn)) || 1;
+  let g = "";
+  items.forEach((it, i)=>{
+    const v = valFn(it), w = Math.max(v > 0 ? 2 : 0, v / max * iw), yy = 4 + i * rowH;
+    const lbl = String(it.label); const short = lbl.length > cut ? lbl.slice(0, cut - 1) + "…" : lbl;
+    g += `<text x="${L - 8}" y="${yy + 15}" class="vz-lbl" text-anchor="end">${svgEsc(short)}</text>`;
+    g += `<rect x="${L}" y="${yy + 5}" width="${iw}" height="12" rx="3" class="vz-track"/>`;
+    if(w > 0) g += `<rect x="${L}" y="${yy + 5}" width="${w}" height="12" rx="3" fill="${opts.color || RPT_C.a}"/>`;
+    g += `<text x="${L + w + 6}" y="${yy + 15}" class="vz-val">${svgEsc(fmtFn(v, it))}</text>`;
+    g += `<rect x="0" y="${yy}" width="${W}" height="${rowH}" fill="transparent" data-tip="${svgEsc(tipFn ? tipFn(it) : lbl + ": " + fmtFn(v, it))}"/>`;
+  });
+  return `<figure class="viz"><figcaption>${esc(title)}</figcaption><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${svgEsc(title)}">${g}</svg></figure>`;
+}
+
+/* ---------- tables ---------- */
+const pc = v => (isFinite(v) ? v : 0).toFixed(1) + " %";
+const kg2 = v => fmt2(v);
+function tbl(head, rows, foot){
+  return `<div style="overflow-x:auto"><table class="cost-reg rpt-tbl"><thead><tr>${head.map(h=>`<th${h.n ? ' class="num"' : ""}>${esc(h.t)}</th>`).join("")}</tr></thead><tbody>${rows.length ? rows.map(r=>`<tr>${r.map((c,i)=>`<td${head[i] && head[i].n ? ' class="num"' : ""}>${c}</td>`).join("")}</tr>`).join("") : `<tr><td colspan="${head.length}" class="empty-state">No data</td></tr>`}</tbody>${foot ? `<tfoot><tr>${foot.map((c,i)=>`<td${head[i] && head[i].n ? ' class="num"' : ""}>${c}</td>`).join("")}</tr></tfoot>` : ""}</table></div>`;
+}
+function bestWorst(list, min, nameOf){
+  const ok = list.filter(x=>x.batches >= min);
+  if(ok.length < 2) return "";
+  const s = ok.slice().sort((a,b)=>b.rftPct - a.rftPct || b.batches - a.batches);
+  const b = s[0], w = s[s.length - 1];
+  return `<div class="rpt-bw"><div class="bw good"><span>Best</span><b>${esc(nameOf(b))}</b><em>${pc(b.rftPct)} RFT · ${b.batches} batches</em></div><div class="bw bad"><span>Needs attention</span><b>${esc(nameOf(w))}</b><em>${pc(w.rftPct)} RFT · ${w.batches} batches · ${w.adds} addition(s)</em></div></div>`;
+}
+
+/* ---------- sections (screen + print share the same HTML) ---------- */
+function rptSections(R){
+  const cfg = getKpiCfg(), min = Math.max(1, cfg.minBatches), cur = R.cv ? getPrices().currency : "", T = R.T;
+  const gName = {day:"Daily", week:"Weekly", month:"Monthly", year:"Yearly"}[R.g];
+  const k = (l, v, cls)=>`<div class="cost-kpi ${cls || ""}"><span>${l}</span><b>${v}</b></div>`;
+  const S = {};
+  S.overview = `<div class="cost-kpis rpt-kpis">${k("Batches run", T.batches)}${k("RFT %", pc(T.rftPct), T.batches ? (T.rftPct >= cfg.target ? "good" : "bad") : "")}${k("Additions", T.adds)}${k("Tape dyed", kg2(T.tape) + " kg")}${k("Dyes used", fmt(T.dye, 3) + " kg")}${k("Chemicals used", fmt(T.chem, 3) + " kg")}${k("Water used", fmt2(T.water / 1000) + " m³")}${k("Avg batches / day", fmt2(T.batches / Math.max(1, new Set(rptJobs().filter(j=>!j.isAdd).map(j=>j.d)).size)))}${R.cv ? k("RM cost", esc(cur) + " " + money(T.cost), "main") + k("RM cost / kg tape", T.tape > 0 ? esc(cur) + " " + money(T.cost / T.tape) : "—", "main") : ""}</div>` +
+    chartStack(R.trend, gName + " batches run") + chartLine(R.trend, gName + " RFT %", cfg.target) +
+    tbl([{t:"Period"},{t:"Batches",n:1},{t:"RFT",n:1},{t:"Not RFT",n:1},{t:"RFT %",n:1},{t:"Additions",n:1},{t:"Tape kg",n:1},{t:"Dyes kg",n:1},{t:"Chemicals kg",n:1},{t:"Water L",n:1}].concat(R.cv ? [{t:"RM cost",n:1}] : []),
+      R.trend.map(r=>[esc(r.label), r.batches, r.rft, r.batches - r.rft, r.batches ? pc(r.rft / r.batches * 100) : "—", r.adds, kg2(r.tape), fmt(r.dye, 3), fmt(r.chem, 3), fmt2(r.water)].concat(R.cv ? [money(r.cost)] : [])),
+      ["<b>TOTAL</b>", T.batches, T.rft, T.batches - T.rft, pc(T.rftPct), T.adds, kg2(T.tape), fmt(T.dye, 3), fmt(T.chem, 3), fmt2(T.water)].concat(R.cv ? [money(T.cost)] : []));
+  const share = (v, t)=> t > 0 ? pc(v / t * 100) : "—";
+  S.materials = `<div class="rpt-2col"><div>${chartHBar(R.dyes, "Top dyes by quantity (kg)", x=>x.kg, v=>fmt(v,3) + " kg", x=>x.label + ": " + fmt(x.kg,3) + " kg in " + x.jobs + " job(s)", {half:1})}</div><div>${chartHBar(R.chems, "Top chemicals by quantity (kg)", x=>x.kg, v=>fmt(v,3) + " kg", x=>x.label + ": " + fmt(x.kg,3) + " kg in " + x.jobs + " job(s)", {color:RPT_C.b, half:1})}</div></div>` +
+    '<div class="card-table-title">Dyes</div>' + tbl([{t:"Dyeing agent"},{t:"Qty kg",n:1},{t:"Share",n:1},{t:"Jobs used in",n:1}].concat(R.cv ? [{t:"Cost (" + cur + ")",n:1}] : []),
+      R.dyes.map(x=>[esc(x.label), fmt(x.kg,3), share(x.kg, T.dye), x.jobs].concat(R.cv ? [money(x.cost)] : [])), ["<b>TOTAL</b>", fmt(T.dye,3), "100 %", ""].concat(R.cv ? [money(R.dyes.reduce((s,x)=>s+x.cost,0))] : [])) +
+    '<div class="card-table-title">Chemicals</div>' + tbl([{t:"Chemical"},{t:"Qty kg",n:1},{t:"Share",n:1},{t:"Jobs used in",n:1}].concat(R.cv ? [{t:"Cost (" + cur + ")",n:1}] : []),
+      R.chems.map(x=>[esc(x.label), fmt(x.kg,3), share(x.kg, T.chem), x.jobs].concat(R.cv ? [money(x.cost)] : [])), ["<b>TOTAL</b>", fmt(T.chem,3), "100 %", ""].concat(R.cv ? [money(R.chems.reduce((s,x)=>s+x.cost,0))] : [])) +
+    '<div class="card-table-title">Tape by type</div>' + tbl([{t:"Tape type"},{t:"Tape kg",n:1},{t:"Share",n:1},{t:"Batches",n:1},{t:"RFT %",n:1}],
+      R.tapes.map(x=>[esc(x.label), kg2(x.kg), share(x.kg, T.tape), x.batches, pc(x.rftPct)]), ["<b>TOTAL</b>", kg2(T.tape), "100 %", T.batches, pc(T.rftPct)]) +
+    `<p class="small-note">Dye &amp; chemical quantities include additions. Water: ${fmt2(T.water)} L (${fmt2(T.water/1000)} m³) for ${T.batches} batch(es).</p>`;
+  const most = R.shades.slice().sort((a,b)=>b.batches - a.batches || b.kg - a.kg);
+  const addMost = R.shades.filter(x=>x.adds > 0).sort((a,b)=>b.adds - a.adds || b.addRate - a.addRate);
+  const rftMost = R.shades.filter(x=>x.rft > 0).sort((a,b)=>b.rft - a.rft || b.rftPct - a.rftPct);
+  S.shades = `<div class="rpt-2col"><div>${chartHBar(most, "Most dyed shades (batches)", x=>x.batches, v=>v + "", x=>x.label + ": " + x.batches + " batch(es), " + fmt2(x.kg) + " kg", {half:1})}</div><div>${chartHBar(addMost, "Shades that needed most additions", x=>x.adds, (v,x)=>v + " (" + x.addRate.toFixed(0) + "%)", x=>x.label + ": " + x.adds + " addition(s) in " + x.batches + " batch(es)", {color:RPT_C.b, half:1})}</div></div>` +
+    chartHBar(rftMost, "Shades RFT most often (RFT batches)", x=>x.rft, (v,x)=>v + " · " + x.rftPct.toFixed(0) + "%", x=>x.label + ": " + x.rft + " of " + x.batches + " RFT") +
+    tbl([{t:"Shade"},{t:"Customer(s)"},{t:"Batches",n:1},{t:"Tape kg",n:1},{t:"RFT",n:1},{t:"RFT %",n:1},{t:"Additions",n:1},{t:"Addition rate",n:1}].concat(R.cv ? [{t:"RM cost",n:1}] : []),
+      most.map(x=>[`<b>${esc(x.label)}</b>`, esc(Array.from(x.names).join(", ")), x.batches, kg2(x.kg), x.rft, pc(x.rftPct), x.adds, pc(x.addRate)].concat(R.cv ? [money(x.cost)] : [])));
+  const mcSort = R.mcs.slice().sort((a,b)=>(b.batches >= min) - (a.batches >= min) || b.rftPct - a.rftPct || b.batches - a.batches);
+  S.machines = bestWorst(R.mcs, min, x=>x.label) + `<div class="rpt-2col"><div>${chartHBar(mcSort, "Machine RFT % (best → worst)", x=>x.rftPct, (v,x)=>v.toFixed(1) + "% · " + x.batches, x=>x.label + ": " + x.rftPct.toFixed(1) + "% RFT, " + x.batches + " batch(es), " + x.adds + " addition(s)", {max:100, top:40, half:1})}</div><div>${chartHBar(R.mcs.slice().sort((a,b)=>b.batches-a.batches), "Batches per machine", x=>x.batches, v=>v + "", x=>x.label + ": " + x.batches + " batch(es), " + fmt2(x.kg) + " kg", {top:40, color:RPT_C.b, half:1})}</div></div>` +
+    tbl([{t:"Rank",n:1},{t:"Machine"},{t:"Capacity kg",n:1},{t:"Operator(s)"},{t:"Batches",n:1},{t:"Tape kg",n:1},{t:"Avg load",n:1},{t:"RFT",n:1},{t:"RFT %",n:1},{t:"Additions",n:1}].concat(R.cv ? [{t:"RM cost",n:1}] : []),
+      mcSort.map((x,i)=>[x.batches >= min ? i + 1 : "—", `<b>${esc(x.label)}</b>`, x.cap || "—", esc(Array.from(x.names).join(", ")), x.batches, kg2(x.kg), isFinite(x.loadPct) ? pc(x.loadPct) : "—", x.rft, pc(x.rftPct), x.adds].concat(R.cv ? [money(x.cost)] : []))) +
+    '<p class="small-note">Avg load = tape kg ÷ machine capacity (from the M/C Capacity label, e.g. "28kg"). Ranking needs at least ' + min + ' batch(es) (KPI Settings).</p>';
+  S.quality = `<div class="rpt-2col"><div>${chartHBar(R.bno, "RFT % by Batch No", x=>x.rftPct, (v,x)=>v.toFixed(1) + "% · " + x.batches, x=>x.label + ": " + x.rft + " of " + x.batches + " RFT", {max:100, half:1})}</div><div>${chartHBar(R.ops, "RFT % by operator", x=>x.rftPct, (v,x)=>v.toFixed(1) + "% · " + x.batches, x=>x.label + ": " + x.rft + " of " + x.batches + " RFT", {max:100, half:1})}</div></div>` +
+    '<div class="card-table-title">By Batch No (which batch is RFT most)</div>' + tbl([{t:"Batch No"},{t:"Batches",n:1},{t:"RFT",n:1},{t:"RFT %",n:1},{t:"Additions",n:1}], R.bno.map(x=>[esc(x.label), x.batches, x.rft, pc(x.rftPct), x.adds])) +
+    '<div class="card-table-title">By operator</div>' + tbl([{t:"Operator"},{t:"Batches",n:1},{t:"RFT",n:1},{t:"RFT %",n:1},{t:"Additions",n:1},{t:"Tape kg",n:1}], R.ops.map(x=>[esc(x.label), x.batches, x.rft, pc(x.rftPct), x.adds, kg2(x.kg)])) +
+    '<div class="card-table-title">By tape type</div>' + tbl([{t:"Tape type"},{t:"Batches",n:1},{t:"RFT %",n:1},{t:"Additions",n:1}], R.tapes.map(x=>[esc(x.label), x.batches, pc(x.rftPct), x.adds])) +
+    '<div class="card-table-title">By calculator</div>' + tbl([{t:"Calculator"},{t:"Batches",n:1},{t:"RFT %",n:1},{t:"Additions",n:1}], R.srcs.map(x=>[esc(x.label), x.batches, pc(x.rftPct), x.adds]));
+  S.customers = chartHBar(R.custs, "Top customers by batches", x=>x.batches, v=>v + "", x=>x.label + ": " + x.batches + " batch(es), " + fmt2(x.kg) + " kg, " + x.rftPct.toFixed(1) + "% RFT") +
+    tbl([{t:"Customer"},{t:"OA No(s)"},{t:"Batches",n:1},{t:"Tape kg",n:1},{t:"RFT %",n:1},{t:"Additions",n:1}].concat(R.cv ? [{t:"RM cost",n:1},{t:"Cost / kg",n:1}] : []),
+      R.custs.map(x=>[`<b>${esc(x.label)}</b>`, esc(Array.from(x.names).filter(Boolean).join(", ")), x.batches, kg2(x.kg), pc(x.rftPct), x.adds].concat(R.cv ? [money(x.cost), x.kg > 0 ? money(x.cost / x.kg) : "—"] : [])));
+  return S;
+}
+const RPT_TABS = [["overview","Production"],["materials","Materials"],["shades","Shades"],["machines","Machines"],["quality","RFT & Quality"],["customers","Customers"]];
+
+/* ---------- screen ---------- */
+function rptFilterText(R){
+  return [R.range.label + (R.range.from > "1900" ? " (" + dateDisplay(R.range.from) + " – " + dateDisplay(R.range.to > "9000" ? localISODate() : R.range.to) + ")" : ""),
+    "grouped " + ({day:"daily", week:"weekly", month:"monthly", year:"yearly"}[R.g]), rptSrc && (rptSrc === "lab" ? "Lab to Bulk" : "Machine-to-Machine"), rptCust && "Customer: " + rptCust, rptMc && "Machine: " + rptMc,
+    rptOp && "Operator: " + (rptOp === "_none" ? "Unassigned" : (operatorById(rptOp) || {}).name)].filter(Boolean).join(" · ");
+}
+function fillSel(id, opts, cur){
+  const sel = $a(id), want = opts.map(o=>`<option value="${esc(o[0])}">${esc(o[1])}</option>`).join("");
+  if(sel.dataset.html !== want){ sel.innerHTML = want; sel.dataset.html = want; }
+  sel.value = cur;
+}
+function renderReport(){
+  if(currentViewId !== "view-report") return;
+  const lib = getLibrary();
+  const uniq = f => Array.from(new Set(lib.map(f).map(v=>String(v || "").trim()).filter(Boolean))).sort((a,b)=>a.localeCompare(b));
+  fillSel("rptCust", [["","All customers"]].concat(uniq(e=>e.customer).map(v=>[v,v])), rptCust);
+  fillSel("rptMc", [["","All machines"]].concat(uniq(e=>e.machineName).map(v=>[v,v])), rptMc);
+  fillSel("rptOp", [["","All operators"]].concat(getOperators().map(o=>[o.id, opName(o)])).concat([["_none","Unassigned"]]), rptOp);
+  $a("rptCustom").hidden = rptPeriod !== "custom";
+  $a("rptTabs").innerHTML = RPT_TABS.map(t=>`<button type="button" class="rpt-tab${t[0] === rptTab ? " on" : ""}" data-rtab="${t[0]}">${t[1]}</button>`).join("");
+  const R = rptCompute();
+  $a("rptInfo").textContent = rptFilterText(R) + " · " + R.T.batches + " batch(es), " + R.T.adds + " addition(s)";
+  $a("rptBody").innerHTML = rptSections(R)[rptTab];
+}
+["rptPeriod","rptGroup","rptCust","rptMc","rptOp","rptSrc"].forEach(id=>$a(id).addEventListener("change", e=>{
+  const v = e.target.value;
+  if(id === "rptPeriod") rptPeriod = v; else if(id === "rptGroup") rptGroup = v; else if(id === "rptCust") rptCust = v; else if(id === "rptMc") rptMc = v; else if(id === "rptOp") rptOp = v; else rptSrc = v;
+  renderReport();
+}));
+$a("rptFrom").addEventListener("change", e=>{ rptFrom = e.target.value; renderReport(); });
+$a("rptTo").addEventListener("change", e=>{ rptTo = e.target.value; renderReport(); });
+$a("rptTabs").addEventListener("click", e=>{ const b = e.target.closest("[data-rtab]"); if(b){ rptTab = b.dataset.rtab; renderReport(); } });
+/* hover tooltip for every chart */
+(function(){
+  const tip = document.createElement("div"); tip.className = "vz-tip no-print"; tip.hidden = true; document.body.appendChild(tip);
+  document.addEventListener("mousemove", e=>{
+    const t = e.target.closest && e.target.closest("#rptBody [data-tip]");
+    if(!t){ tip.hidden = true; return; }
+    tip.textContent = t.getAttribute("data-tip"); tip.hidden = false;
+    const x = Math.min(window.innerWidth - tip.offsetWidth - 8, e.clientX + 14), y = Math.max(8, e.clientY - tip.offsetHeight - 12);
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  });
+})();
+
+/* ---------- print (English, with logo) ---------- */
+$a("rptPrint").addEventListener("click", ()=>{
+  const R = rptCompute(); if(!R.T.jobs){ toast("No data in this period"); return; }
+  const S = rptSections(R), tab = RPT_TABS.find(t=>t[0] === rptTab);
+  printCostDoc("Dyeing Report — " + tab[1], `<p class="small-note">${esc(rptFilterText(R))}</p>` + S[rptTab]);
+});
+$a("rptPrintAll").addEventListener("click", ()=>{
+  const R = rptCompute(); if(!R.T.jobs){ toast("No data in this period"); return; }
+  const S = rptSections(R);
+  printCostDoc("Dyeing Report — Full", `<p class="small-note">${esc(rptFilterText(R))}</p>` + RPT_TABS.map((t,i)=>(i ? '<h2 class="pb">' + esc(t[1]) + '</h2>' : '<h3>' + esc(t[1]) + '</h3>') + S[t[0]]).join(""));
+});
+
+/* ---------- Excel (one workbook, a sheet per report) ---------- */
+$a("rptExcel").addEventListener("click", ()=>{
+  if(!need("library.export")) return;
+  const R = rptCompute(); if(!R.T.jobs){ toast("No data in this period"); return; }
+  const cv = R.cv, cur = cv ? getPrices().currency : "", T = R.T, X = xlNum;
+  const info = [["Report", "Dyeing Report"], ["Company", company().name], ["Filters", rptFilterText(R)], ["Generated", formatSavedAt(new Date().toISOString())], [], ["Measure","Value"],
+    ["Batches run", T.batches], ["RFT batches", T.rft], ["RFT %", X(T.rftPct)], ["Additions", T.adds], ["Tape dyed (kg)", X(T.tape)], ["Dyes used (kg)", X(T.dye)], ["Chemicals used (kg)", X(T.chem)], ["Water used (L)", X(T.water)]]
+    .concat(cv ? [["RM cost (" + cur + ")", X(T.cost)], ["RM cost per kg tape (" + cur + ")", T.tape > 0 ? X(T.cost / T.tape) : ""]] : []);
+  const trend = [["Period","Batches","RFT","Not RFT","RFT %","Additions","Tape kg","Dyes kg","Chemicals kg","Water L"].concat(cv ? ["RM cost (" + cur + ")"] : [])]
+    .concat(R.trend.map(r=>[r.label, r.batches, r.rft, r.batches - r.rft, r.batches ? X(r.rft / r.batches * 100) : "", r.adds, X(r.tape), X(r.dye), X(r.chem), X(r.water)].concat(cv ? [X(r.cost)] : [])));
+  const mat = (list, name) => [[name, "Qty kg", "Share %", "Jobs used in"].concat(cv ? ["Cost (" + cur + ")"] : [])].concat(list.map(x=>[x.label, X(x.kg), X(list.reduce((s,y)=>s+y.kg,0) ? x.kg / list.reduce((s,y)=>s+y.kg,0) * 100 : 0), x.jobs].concat(cv ? [X(x.cost)] : [])));
+  const grp = (list, name, extra) => [[name, "Batches", "RFT", "Not RFT", "RFT %", "Additions", "Addition rate %", "Tape kg"].concat(extra ? extra.h : []).concat(cv ? ["RM cost (" + cur + ")"] : [])]
+    .concat(list.map(x=>[x.label, x.batches, x.rft, x.batches - x.rft, X(x.rftPct), x.adds, X(x.addRate), X(x.kg)].concat(extra ? extra.v(x) : []).concat(cv ? [X(x.cost)] : [])));
+  const shades = R.shades.slice().sort((a,b)=>b.batches - a.batches);
+  const mcs = R.mcs.slice().sort((a,b)=>b.rftPct - a.rftPct || b.batches - a.batches);
+  downloadBlob(buildXlsx([
+    {name:"Summary", rows:info, widths:[30,60]},
+    {name:"Production " + ({day:"Daily", week:"Weekly", month:"Monthly", year:"Yearly"}[R.g]), rows:trend, widths:[14,9,8,9,8,10,10,10,12,10,14]},
+    {name:"Dyes", rows:mat(R.dyes, "Dyeing agent"), widths:[44,12,10,12,14]},
+    {name:"Chemicals", rows:mat(R.chems, "Chemical"), widths:[34,12,10,12,14]},
+    {name:"Tape Types", rows:grp(R.tapes, "Tape type"), widths:[18,9,8,9,8,10,14,10,14]},
+    {name:"Shades", rows:grp(shades, "Shade", {h:["Customers"], v:x=>[Array.from(x.names).join(", ")]}), widths:[22,9,8,9,8,10,14,10,30,14]},
+    {name:"Machines", rows:grp(mcs, "Machine", {h:["Capacity kg","Avg load %","Operators"], v:x=>[x.cap || "", isFinite(x.loadPct) ? X(x.loadPct) : "", Array.from(x.names).join(", ")]}), widths:[14,9,8,9,8,10,14,10,12,11,24,14]},
+    {name:"Batch No", rows:grp(R.bno, "Batch No"), widths:[14,9,8,9,8,10,14,10,14]},
+    {name:"Operators", rows:grp(R.ops, "Operator"), widths:[22,9,8,9,8,10,14,10,14]},
+    {name:"Customers", rows:grp(R.custs, "Customer", {h:["OA Nos"], v:x=>[Array.from(x.names).filter(Boolean).join(", ")]}), widths:[24,9,8,9,8,10,14,10,30,14]}
+  ]), "TexZippers_Report_" + (R.range.from > "1900" ? R.range.from + "_to_" + (R.range.to > "9000" ? localISODate() : R.range.to) : "all_" + localISODate()) + ".xlsx");
+  audit("report.export", rptFilterText(R));
+});
+
 /* ---------------- boot ---------------- */
 (async function boot(){
   try{
@@ -7950,6 +9348,8 @@ function afterLogin(){
   LISTS = loadLists();
   populateListEditor();
   initAdditionPanels();
+  initQtyAdjPanels();
+  initOperatorSelects();
   initApp();
   const f = document.getElementById("homeFootStore"); if(f) f.textContent = "Data: " + (Store.mode === "idb" ? "IndexedDB" : "localStorage") + " on this device" + (Sync.provs().length ? " + cloud sync" : "");
   initAuthFlow();

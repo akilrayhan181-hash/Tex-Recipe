@@ -1,7 +1,7 @@
 /* TEX ZIPPERS Recipe Calculator - offline support.
    Network first (a new version on GitHub Pages is picked up right away),
    cached copy when offline. Cloud sync requests are never cached. */
-const CACHE = "tz-recipe-v6.0.2";
+const CACHE = "tz-recipe-v6.4.0";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
